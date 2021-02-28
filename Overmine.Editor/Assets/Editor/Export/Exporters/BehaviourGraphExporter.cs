@@ -26,11 +26,8 @@ namespace Editor.Export.Exporters
             result.SetField("m_pauseWhenDisabled", source.PauseWhenDisabled);
             result.SetField("m_interruptable", source.Interruptable);
 
-            var objects = source.Objects
+            var objects = source.Objects?
                 .Select(exporter.Export)
-                .Cast<GameObject>()
-                .Select(x => x.GetComponent<Entity>())
-                .Cast<Object>()
                 .ToList();
 
             result.BehaviorSource = new BehaviorSource

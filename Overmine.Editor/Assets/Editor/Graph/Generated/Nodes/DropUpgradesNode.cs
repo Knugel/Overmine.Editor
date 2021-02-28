@@ -13,6 +13,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Target")]
         public Thor.SharedEntity m_target;
 
+        [GraphProcessor.Input("Bottle")]
         public Thor.ItemData m_bottle;
 
         [GraphProcessor.ShowInInspector]
@@ -33,6 +34,7 @@ namespace Overmine.Generated
         [GraphProcessor.ShowInInspector]
         public System.Int32 m_maxBottles;
 
+        [GraphProcessor.Input("Template Override")]
         public Thor.Entity m_templateOverride;
 
         [GraphProcessor.ShowInInspector]

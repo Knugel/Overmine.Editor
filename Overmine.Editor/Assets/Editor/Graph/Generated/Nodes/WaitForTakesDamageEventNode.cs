@@ -36,7 +36,6 @@ namespace Overmine.Generated
 
         [GraphProcessor.Output, GraphProcessor.Vertical]
         public Editor.Graph.Nodes.ControlFlow Children;
-		
         [GraphProcessor.Input("Hibernate"), GraphProcessor.ShowAsDrawer]
         public BehaviorDesigner.Runtime.SharedBool m_hibernate;
 

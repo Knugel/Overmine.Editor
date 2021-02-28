@@ -13,7 +13,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Start Position"), GraphProcessor.ShowAsDrawer]
         public BehaviorDesigner.Runtime.SharedVector3 m_startPosition;
 
-        [GraphProcessor.ShowInInspector]
+        [GraphProcessor.Input("Missile")]
         public Thor.MissileExt m_missile;
 
     }

@@ -10,6 +10,7 @@ namespace Overmine.Generated
 
         public override System.Type Type => typeof(Thor.SetStat);
 
+        [GraphProcessor.Input("Stat")]
         public Thor.StatData m_stat;
 
         [GraphProcessor.Input("Operator"), GraphProcessor.ShowAsDrawer]

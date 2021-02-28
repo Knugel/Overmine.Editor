@@ -10,6 +10,7 @@ namespace Overmine.Generated
 
         public override System.Type Type => typeof(Thor.AchievementComplete);
 
+        [GraphProcessor.Input("Achievement")]
         public Thor.AchievementData m_achievement;
 
     }

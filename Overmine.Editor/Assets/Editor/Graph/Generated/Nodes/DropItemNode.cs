@@ -31,6 +31,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Offset"), GraphProcessor.ShowAsDrawer]
         public BehaviorDesigner.Runtime.SharedVector3 m_offset;
 
+        [GraphProcessor.Input("Template Override")]
         public Thor.Entity m_templateOverride;
 
         [GraphProcessor.Input("Data")]

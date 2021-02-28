@@ -45,7 +45,18 @@ namespace Editor.Export
             if (existing != null)
                 return existing.Result;
 
-            var exporter = Exporters[source.GetType()];
+            var sType = source.GetType();
+
+            if (!Exporters.TryGetValue(sType, out var exporter))
+            {
+                if (typeof(MonoBehaviour).IsAssignableFrom(sType))
+                {
+                    sType = typeof(GameObject);
+                    source = ((MonoBehaviour) source).gameObject;
+                }
+            }
+
+            exporter = Exporters[sType];
 
             var prepared = exporter.PrepareExport(path, source, this);
             if (prepared != null)

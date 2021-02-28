@@ -13,10 +13,10 @@ namespace Overmine.Generated
         [GraphProcessor.ShowInInspector]
         public Thor.AbilityStage m_stage;
 
-        [GraphProcessor.ShowInInspector]
+        [GraphProcessor.Input("External Behaviors", true)]
         public BehaviorDesigner.Runtime.ExternalBehavior[] externalBehaviors;
 
-        [GraphProcessor.ShowInInspector]
+        [GraphProcessor.Input("Variables", true)]
         public BehaviorDesigner.Runtime.SharedNamedVariable[] variables;
 
         [GraphProcessor.ShowInInspector]

@@ -10,7 +10,7 @@ namespace Overmine.Generated
 
         public override System.Type Type => typeof(Thor.WaitForLosesResourceEvent);
 
-        [GraphProcessor.ShowInInspector]
+        [GraphProcessor.Input("Resource")]
         public Thor.ResourceData m_resource;
 
         [GraphProcessor.Input("Amount Output")]

@@ -13,6 +13,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Target")]
         public Thor.SharedEntity m_target;
 
+        [GraphProcessor.Input("External Behaviors")]
         public Thor.BehaviorContainer m_externalBehaviors;
 
     }

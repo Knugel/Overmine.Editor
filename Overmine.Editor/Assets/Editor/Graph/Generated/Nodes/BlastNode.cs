@@ -16,8 +16,10 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Blaster")]
         public Thor.SharedEntity m_blaster;
 
+        [GraphProcessor.Input("Sprite")]
         public UnityEngine.Sprite m_sprite;
 
+        [GraphProcessor.Input("Blast Map")]
         public UnityEngine.Texture2D m_blastMap;
 
         [GraphProcessor.Input("Fade"), GraphProcessor.ShowAsDrawer]

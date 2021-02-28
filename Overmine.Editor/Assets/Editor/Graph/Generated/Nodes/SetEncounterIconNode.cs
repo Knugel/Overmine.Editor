@@ -10,6 +10,7 @@ namespace Overmine.Generated
 
         public override System.Type Type => typeof(Thor.SetEncounterIcon);
 
+        [GraphProcessor.Input("Icon")]
         public UnityEngine.Sprite m_icon;
 
     }

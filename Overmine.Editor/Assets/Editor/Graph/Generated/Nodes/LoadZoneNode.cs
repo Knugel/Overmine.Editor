@@ -10,6 +10,7 @@ namespace Overmine.Generated
 
         public override System.Type Type => typeof(Thor.LoadZone);
 
+        [GraphProcessor.Input("Zone")]
         public Thor.ZoneData m_zone;
 
         [GraphProcessor.ShowInInspector]

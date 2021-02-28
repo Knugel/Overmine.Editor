@@ -5,7 +5,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using BehaviorDesigner.Runtime;
+using Editor.Export;
 using Editor.Graph.Nodes;
+using Editor.Graph.Parameters;
 using GraphProcessor;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -97,15 +99,62 @@ namespace Editor.Graph.Serialization
                 .OrderBy(x => x.computeOrder);
             var children = new List<JObject>();
 
+            var inputs = node.GetAllPorts();
+            var idxNodes = new List<string>();
+            
+            foreach (var port in inputs)
+            {
+                if (!node.IsFieldInput(port.fieldName))
+                    continue;
+                
+                var edges = port.GetEdges()
+                    .Where(x => x.outputNode is ParameterNode param && param.parameter is ObjectParameter)
+                    .ToList();
+                
+                if (port.portData.acceptMultipleEdges)
+                {
+                    var idxList = new List<int>();
+                    foreach (var edge in edges)
+                    {
+                        var param = (ParameterNode) edge.outputNode;
+                    
+                        var replaced = param.parameter.name.Replace("Index", "").Trim();
+                        if (int.TryParse(replaced, out var idx))
+                        {
+                            idxNodes.Add(port.fieldName);
+                            idxList.Add(idx);
+                        }
+                    }
+                    if(idxList.Count > 0)
+                        obj.Add(port.fieldInfo.FieldType.Name + port.fieldName, JArray.FromObject(idxList, Serializer));
+                }
+                else
+                {
+                    var edge = edges.FirstOrDefault();
+                    if (edge == null)
+                        continue;
+
+                    var param = (ParameterNode) edge.outputNode;
+                    
+                    var replaced = param.parameter.name.Replace("Index", "").Trim();
+                    if (int.TryParse(replaced, out var idx))
+                    {
+                        idxNodes.Add(port.fieldName);
+                        obj.Add(port.fieldInfo.FieldType.Name + port.fieldName, JToken.FromObject(idx, Serializer));
+                    }
+                }
+            }
+
             var fields = node
                 .GetNodeFields()
                 .Where(x => x.GetCustomAttribute<InputAttribute>() != null || x.GetCustomAttribute<ShowInInspector>() != null)
-                .Where(x => x.Name != "Instant");
+                .Where(x => x.Name != "Instant")
+                .Where(x => !idxNodes.Contains(x.Name));
             foreach (var field in fields)
             {
                 if(field.FieldType == typeof(ControlFlow))
                     continue;
-                
+
                 var value = field.GetValue(node);
                 
                 if (value == null && field.FieldType.IsSubclassOf(typeof(SharedVariable)))
@@ -136,7 +185,7 @@ namespace Editor.Graph.Serialization
             
             return obj;
         }
-        
+
         private static JArray SerializeVariables(IEnumerable<ExposedParameter> parameters)
         {
             var ret = parameters

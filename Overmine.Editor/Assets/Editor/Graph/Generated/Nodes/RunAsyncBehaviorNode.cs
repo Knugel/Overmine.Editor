@@ -10,7 +10,7 @@ namespace Overmine.Generated
 
         public override System.Type Type => typeof(Thor.RunAsyncBehavior);
 
-        [GraphProcessor.ShowInInspector]
+        [GraphProcessor.Input("Behavior")]
         public Thor.ExtendedExternalBehaviorTree m_behavior;
 
         [GraphProcessor.Input("Self")]

@@ -13,6 +13,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Target")]
         public Thor.SharedEntity m_target;
 
+        [GraphProcessor.Input("Object")]
         public Thor.Decorator m_object;
 
     }

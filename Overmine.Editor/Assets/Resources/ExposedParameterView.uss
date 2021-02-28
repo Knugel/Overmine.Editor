@@ -1,3 +1,7 @@
+.parameter-Object {
+    background-color: #ee7c1c;
+}
+
 .parameter-SharedFloat {
     background-color: #9ef73b;
 }

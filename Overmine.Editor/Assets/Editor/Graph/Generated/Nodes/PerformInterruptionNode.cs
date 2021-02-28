@@ -10,7 +10,7 @@ namespace Overmine.Generated
 
         public override System.Type Type => typeof(BehaviorDesigner.Runtime.Tasks.PerformInterruption);
 
-        [GraphProcessor.ShowInInspector]
+        [GraphProcessor.Input("Interrupt Tasks")]
         public BehaviorDesigner.Runtime.Tasks.Interrupt[] interruptTasks;
 
         [GraphProcessor.Input("Interrupt Success"), GraphProcessor.ShowAsDrawer]

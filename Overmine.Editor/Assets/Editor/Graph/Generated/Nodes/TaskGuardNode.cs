@@ -13,7 +13,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Max Task Access Count"), GraphProcessor.ShowAsDrawer]
         public BehaviorDesigner.Runtime.SharedInt maxTaskAccessCount;
 
-        [GraphProcessor.ShowInInspector]
+        [GraphProcessor.Input("Linked Task Guards")]
         public BehaviorDesigner.Runtime.Tasks.TaskGuard[] linkedTaskGuards;
 
         [GraphProcessor.Input("Wait Until Task Available"), GraphProcessor.ShowAsDrawer]

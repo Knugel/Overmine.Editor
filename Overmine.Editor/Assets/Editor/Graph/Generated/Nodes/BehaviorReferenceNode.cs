@@ -10,10 +10,10 @@ namespace Overmine.Generated
 
         public override System.Type Type => typeof(BehaviorDesigner.Runtime.Tasks.BehaviorReference);
 
-        [GraphProcessor.ShowInInspector]
+        [GraphProcessor.Input("External Behaviors", true)]
         public BehaviorDesigner.Runtime.ExternalBehavior[] externalBehaviors;
 
-        [GraphProcessor.ShowInInspector]
+        [GraphProcessor.Input("Variables", true)]
         public BehaviorDesigner.Runtime.SharedNamedVariable[] variables;
 
         [GraphProcessor.ShowInInspector]

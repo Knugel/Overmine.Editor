@@ -10,6 +10,7 @@ namespace Overmine.Generated
 
         public override System.Type Type => typeof(Thor.SetAudioMap);
 
+        [GraphProcessor.Input("Audio Map")]
         public Thor.AudioMapData m_audioMap;
 
     }

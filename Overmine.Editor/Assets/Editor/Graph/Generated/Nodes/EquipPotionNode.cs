@@ -16,7 +16,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Source")]
         public Thor.SharedEntity m_source;
 
-        [GraphProcessor.ShowInInspector]
+        [GraphProcessor.Input("Equipment")]
         public Thor.EquipmentExt m_equipment;
 
     }

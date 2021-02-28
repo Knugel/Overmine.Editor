@@ -2,6 +2,10 @@
     --port-color: #cccccc;
 }
 
+.Port_Object {
+    --port-color: #ee7c1c;
+}
+
 .Port_SharedFloat {
     --port-color: #9ef73b;
 }

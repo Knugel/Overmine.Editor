@@ -10,6 +10,7 @@ namespace Overmine.Generated
 
         public override System.Type Type => typeof(Thor.SetLocMap);
 
+        [GraphProcessor.Input("Loc Map")]
         public Thor.LocMapData m_locMap;
 
     }

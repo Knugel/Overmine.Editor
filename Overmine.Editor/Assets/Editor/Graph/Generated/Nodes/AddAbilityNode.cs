@@ -13,6 +13,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Target")]
         public Thor.SharedEntity m_target;
 
+        [GraphProcessor.Input("Ability")]
         public Thor.AbilityExt m_ability;
 
         [GraphProcessor.Input("Output")]

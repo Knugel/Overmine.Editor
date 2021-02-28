@@ -85,7 +85,7 @@ MonoBehaviour:
   - id: 13
   serializedParameterList: []
   stickyNotes: []
-  position: {x: -252, y: -11, z: 0}
+  position: {x: 43, y: -15, z: 0}
   scale: {x: 1.15, y: 1.15, z: 1}
   PreProcess: 0
   AutoStart: 1
@@ -93,7 +93,7 @@ MonoBehaviour:
   PauseWhenDisabled: 0
   Interruptable: 0
   Objects:
-  - {fileID: 4330768228013938573, guid: 7c6b8c6dd5607b749a20c4d2b62aed7f, type: 3}
+  - {fileID: 7908673040281194480, guid: 7c6b8c6dd5607b749a20c4d2b62aed7f, type: 3}
   references:
     version: 1
     00000000:
@@ -117,9 +117,9 @@ MonoBehaviour:
         computeOrder: 5
         position:
           serializedVersion: 2
-          x: 765
-          y: 303.5
-          width: 145
+          x: 766.315
+          y: 304
+          width: 146
           height: 153
         expanded: 0
         debug: 0
@@ -219,7 +219,7 @@ MonoBehaviour:
         computeOrder: 2
         position:
           serializedVersion: 2
-          x: 502.78302
+          x: 504.31503
           y: 358
           width: 157
           height: 195
@@ -348,8 +348,8 @@ MonoBehaviour:
         computeOrder: 4
         position:
           serializedVersion: 2
-          x: 679
-          y: 353.5
+          x: 680.315
+          y: 354
           width: 74
           height: 23
         expanded: 0
@@ -364,9 +364,9 @@ MonoBehaviour:
         computeOrder: 1
         position:
           serializedVersion: 2
-          x: 696.9818
-          y: 425.85202
-          width: 59
+          x: 698.315
+          y: 426
+          width: 58.999996
           height: 23
         expanded: 0
         debug: 0
@@ -380,8 +380,8 @@ MonoBehaviour:
         computeOrder: 3
         position:
           serializedVersion: 2
-          x: 674
-          y: 377.5
+          x: 675.315
+          y: 378
           width: 81
           height: 23
         expanded: 0
