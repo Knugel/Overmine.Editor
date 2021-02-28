@@ -64,8 +64,7 @@ MonoBehaviour:
   Rerollable: 1
   AllowOnAltar: 1
   PickedUpBehaviour: {fileID: 11400000, guid: d9af59c577dd44b4ca20fd2b156ee3a6, type: 2}
-  SecondaryPickedUpBehaviour: {fileID: 11400000, guid: 93f048bbbc20afd4e9263e824e914a27,
-    type: 2}
+  SecondaryPickedUpBehaviour: {fileID: 0}
   IsSpecialDrop: 0
   IsSpecialDiscovery: 0
   ComboPiece: {fileID: 0}
