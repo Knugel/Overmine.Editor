@@ -1,0 +1,614 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc171efa20c17c4487fe5f77c5ede42, type: 3}
+  m_Name: Add Status Effect
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  edges:
+  - GUID: 1ff1ebc1-45ff-46f5-9da5-0e0f8cdcaa72
+    owner: {fileID: 11400000}
+    inputNodeGUID: 4b840b7e-500d-4252-bc89-94a034f735e9
+    outputNodeGUID: d3b0fcaa-693b-45b3-95aa-29a3a53275c6
+    inputFieldName: In
+    outputFieldName: Out
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: ac81f1da-237f-4ff3-8689-9d580a6b0023
+    owner: {fileID: 11400000}
+    inputNodeGUID: 4b840b7e-500d-4252-bc89-94a034f735e9
+    outputNodeGUID: aa223f6d-15ee-48f7-985c-ec9e79413420
+    inputFieldName: m_data
+    outputFieldName: Output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: c857481e-f6b4-4754-b53b-4a1a9616ef4c
+    owner: {fileID: 11400000}
+    inputNodeGUID: 4b840b7e-500d-4252-bc89-94a034f735e9
+    outputNodeGUID: ebc169bc-c95a-42f3-9a19-1cd8a7632d38
+    inputFieldName: m_target
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 07e6a428-8147-433f-a1f9-685d53b26462
+    owner: {fileID: 11400000}
+    inputNodeGUID: 4b840b7e-500d-4252-bc89-94a034f735e9
+    outputNodeGUID: 62dbf0cd-c13d-4d7e-b9bf-141607be3a7b
+    inputFieldName: m_source
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 64805070-b2fd-47fd-b9cd-37576584e353
+    owner: {fileID: 11400000}
+    inputNodeGUID: 4b840b7e-500d-4252-bc89-94a034f735e9
+    outputNodeGUID: 9358950a-e691-4957-8efd-8b4e8307aeff
+    inputFieldName: m_statusEffect
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  groups: []
+  stackNodes: []
+  pinnedElements:
+  - position:
+      serializedVersion: 2
+      x: 3
+      y: 23
+      width: 271
+      height: 222
+    opened: 1
+    editorType:
+      serializedType: Editor.Graph.Views.BehaviourParameterView, Assembly-CSharp-Editor,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  exposedParameters:
+  - id: 6
+  - id: 7
+  - id: 8
+  - id: 9
+  - id: 10
+  - id: 11
+  - id: 12
+  - id: 13
+  serializedParameterList: []
+  stickyNotes: []
+  position: {x: -252, y: -11, z: 0}
+  scale: {x: 1.15, y: 1.15, z: 1}
+  PreProcess: 0
+  AutoStart: 1
+  RestartWhenComplete: 1
+  PauseWhenDisabled: 0
+  Interruptable: 0
+  Objects:
+  - {fileID: 4330768228013938573, guid: 7c6b8c6dd5607b749a20c4d2b62aed7f, type: 3}
+  references:
+    version: 1
+    00000000:
+      type: {class: EntryTaskNode, ns: Editor.Graph.Nodes, asm: Assembly-CSharp-Editor}
+      data:
+        GUID: d3b0fcaa-693b-45b3-95aa-29a3a53275c6
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 801.3201
+          y: 231.5825
+          width: 74
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+    00000001:
+      type: {class: AddStatusEffectNode, ns: Overmine.Generated, asm: Assembly-CSharp-Editor}
+      data:
+        GUID: 4b840b7e-500d-4252-bc89-94a034f735e9
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 765
+          y: 303.5
+          width: 145
+          height: 153
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Instant: 1
+        m_target:
+          mIsShared: 1
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: Target
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+        m_statusEffect:
+          mIsShared: 1
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: Index 0
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+        m_data:
+          level:
+            mIsShared: 0
+            mIsGlobal: 0
+            mIsDynamic: 0
+            mName: 
+            mPropertyMapping: 
+            mPropertyMappingOwner: {fileID: 0}
+            mNetworkSync: 0
+            mValue: 0
+          duration:
+            mIsShared: 0
+            mIsGlobal: 0
+            mIsDynamic: 0
+            mName: 
+            mPropertyMapping: 
+            mPropertyMappingOwner: {fileID: 0}
+            mNetworkSync: 0
+            mValue: 0
+          userData:
+            mIsShared: 0
+            mIsGlobal: 0
+            mIsDynamic: 0
+            mName: 
+            mPropertyMapping: 
+            mPropertyMappingOwner: {fileID: 0}
+            mNetworkSync: 0
+            mValue: 0
+          userString:
+            mIsShared: 0
+            mIsGlobal: 0
+            mIsDynamic: 0
+            mName: 
+            mPropertyMapping: 
+            mPropertyMappingOwner: {fileID: 0}
+            mNetworkSync: 0
+            mValue: 
+          hint:
+            mIsShared: 0
+            mIsGlobal: 0
+            mIsDynamic: 0
+            mName: 
+            mPropertyMapping: 
+            mPropertyMappingOwner: {fileID: 0}
+            mNetworkSync: 0
+            mValue: 
+          sticky:
+            mIsShared: 0
+            mIsGlobal: 0
+            mIsDynamic: 0
+            mName: 
+            mPropertyMapping: 
+            mPropertyMappingOwner: {fileID: 0}
+            mNetworkSync: 0
+            mValue: 0
+          blocked: 0
+          modifiedLevel: 0
+          modifiedDuration: 0
+          modifiedSticky: 0
+          durationRatio: 1
+        m_source:
+          mIsShared: 1
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: Self
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    00000002:
+      type: {class: StatusEffectDataNode, ns: Editor.Graph.Nodes.Constructors, asm: Assembly-CSharp-Editor}
+      data:
+        GUID: aa223f6d-15ee-48f7-985c-ec9e79413420
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: 502.78302
+          y: 358
+          width: 157
+          height: 195
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Level:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 0
+        Duration:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 0
+        UserData:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 0
+        UserString:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 
+        Hint:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 
+        Sticky:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 0
+        Blocked: 0
+        Output:
+          level:
+            mIsShared: 0
+            mIsGlobal: 0
+            mIsDynamic: 0
+            mName: 
+            mPropertyMapping: 
+            mPropertyMappingOwner: {fileID: 0}
+            mNetworkSync: 0
+            mValue: 0
+          duration:
+            mIsShared: 0
+            mIsGlobal: 0
+            mIsDynamic: 0
+            mName: 
+            mPropertyMapping: 
+            mPropertyMappingOwner: {fileID: 0}
+            mNetworkSync: 0
+            mValue: 0
+          userData:
+            mIsShared: 0
+            mIsGlobal: 0
+            mIsDynamic: 0
+            mName: 
+            mPropertyMapping: 
+            mPropertyMappingOwner: {fileID: 0}
+            mNetworkSync: 0
+            mValue: 0
+          userString:
+            mIsShared: 0
+            mIsGlobal: 0
+            mIsDynamic: 0
+            mName: 
+            mPropertyMapping: 
+            mPropertyMappingOwner: {fileID: 0}
+            mNetworkSync: 0
+            mValue: 
+          hint:
+            mIsShared: 0
+            mIsGlobal: 0
+            mIsDynamic: 0
+            mName: 
+            mPropertyMapping: 
+            mPropertyMappingOwner: {fileID: 0}
+            mNetworkSync: 0
+            mValue: 
+          sticky:
+            mIsShared: 0
+            mIsGlobal: 0
+            mIsDynamic: 0
+            mName: 
+            mPropertyMapping: 
+            mPropertyMappingOwner: {fileID: 0}
+            mNetworkSync: 0
+            mValue: 0
+          blocked: 0
+          modifiedLevel: 0
+          modifiedDuration: 0
+          modifiedSticky: 0
+          durationRatio: 1
+    00000003:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        GUID: ebc169bc-c95a-42f3-9a19-1cd8a7632d38
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 679
+          y: 353.5
+          width: 74
+          height: 23
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: e16a05f7-11f6-481f-8c29-f62cf2a8c8b7
+        accessor: 0
+    00000004:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        GUID: 62dbf0cd-c13d-4d7e-b9bf-141607be3a7b
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 696.9818
+          y: 425.85202
+          width: 59
+          height: 23
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 1e64b117-8d8b-48b5-bddf-a4c2e271e980
+        accessor: 0
+    00000005:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        GUID: 9358950a-e691-4957-8efd-8b4e8307aeff
+        computeOrder: 3
+        position:
+          serializedVersion: 2
+          x: 674
+          y: 377.5
+          width: 81
+          height: 23
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 18a5d1c8-a659-42bb-aebd-067e66b2f537
+        accessor: 0
+    00000006:
+      type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Assembly-CSharp-Editor}
+      data:
+        guid: 1e64b117-8d8b-48b5-bddf-a4c2e271e980
+        name: Self
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 14
+        Value:
+          mIsShared: 1
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: Self
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    00000007:
+      type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Assembly-CSharp-Editor}
+      data:
+        guid: b92b5489-c19f-4e26-bd24-776d0aba60d3
+        name: Owner
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 15
+        Value:
+          mIsShared: 1
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: Owner
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    00000008:
+      type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Assembly-CSharp-Editor}
+      data:
+        guid: a3d01fbc-e242-4282-a82c-214d974e2b98
+        name: Root
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 16
+        Value:
+          mIsShared: 1
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: Root
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    00000009:
+      type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Assembly-CSharp-Editor}
+      data:
+        guid: 7eabf366-b2a2-4d60-ac79-93b6f291d75d
+        name: Link
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 17
+        Value:
+          mIsShared: 1
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: Link
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    0000000A:
+      type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Assembly-CSharp-Editor}
+      data:
+        guid: 5a07e589-9cb1-4fab-8b02-c39636b28690
+        name: Iterator
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 18
+        Value:
+          mIsShared: 1
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: Iterator
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    0000000B:
+      type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Assembly-CSharp-Editor}
+      data:
+        guid: e16a05f7-11f6-481f-8c29-f62cf2a8c8b7
+        name: Target
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 19
+        Value:
+          mIsShared: 1
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: Target
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    0000000C:
+      type: {class: EntityListParameter, ns: Editor.Graph.Parameters, asm: Assembly-CSharp-Editor}
+      data:
+        guid: c00dff9d-3b5d-4f6a-bfe4-94256383aaf5
+        name: Targets
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 20
+        Value:
+          mIsShared: 1
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: Targets
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+    0000000D:
+      type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Assembly-CSharp-Editor}
+      data:
+        guid: 18a5d1c8-a659-42bb-aebd-067e66b2f537
+        name: Index 0
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 21
+        Value:
+          mIsShared: 1
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: Index 0
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    0000000E:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 1e64b117-8d8b-48b5-bddf-a4c2e271e980
+    0000000F:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: b92b5489-c19f-4e26-bd24-776d0aba60d3
+    00000010:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: a3d01fbc-e242-4282-a82c-214d974e2b98
+    00000011:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 7eabf366-b2a2-4d60-ac79-93b6f291d75d
+    00000012:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 5a07e589-9cb1-4fab-8b02-c39636b28690
+    00000013:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: e16a05f7-11f6-481f-8c29-f62cf2a8c8b7
+    00000014:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: c00dff9d-3b5d-4f6a-bfe4-94256383aaf5
+    00000015:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 18a5d1c8-a659-42bb-aebd-067e66b2f537

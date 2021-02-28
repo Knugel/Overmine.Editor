@@ -1,0 +1,51 @@
+.port {
+    --port-color: #cccccc;
+}
+
+.Port_SharedFloat {
+    --port-color: #9ef73b;
+}
+
+.Port_SharedVector2 {
+    --port-color: #f2c522;
+}
+
+.Port_SharedVector3 {
+    --port-color: #f2c522;
+}
+
+.Port_SharedInt {
+    --port-color: #28e1a7;
+}
+
+.Port_SharedString {
+    --port-color: #f400ca;
+}
+
+.Port_SharedBool {
+    --port-color: #900201;
+}
+
+.Port_SharedEntity {
+    --port-color: #203fff;
+}
+
+.Port_ControlFlow {
+    --port-color: #FFFFFF;
+}
+
+.Port_SharedVariable {
+    --port-color: #aaaaaa;
+}
+
+.Port_SharedEntityList {
+    --port-color: #203fff;
+}
+
+.Port_SharedEntityList > #connector {
+    border-radius: 0;
+}
+
+.Port_SharedEntityList > #connector > #cap {
+    border-radius: 0;
+}

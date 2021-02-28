@@ -1,0 +1,8 @@
+.root > * {
+    padding-left: 10px;
+}
+
+.root > Label {
+    -unity-font-style: bold;
+    padding-left: 5px;
+}

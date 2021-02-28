@@ -1,0 +1,31 @@
+.parameter-SharedFloat {
+    background-color: #9ef73b;
+}
+
+.parameter-SharedVector2 {
+    background-color: #f2c522;
+}
+
+.parameter-SharedVector3 {
+    background-color: #f2c522;
+}
+
+.parameter-SharedInt {
+    background-color: #28e1a7;
+}
+
+.parameter-SharedString {
+    background-color: #f400ca;
+}
+
+.parameter-SharedBool {
+    background-color: #900201;
+}
+
+.parameter-SharedEntity {
+    background-color: #203fff;
+}
+
+.parameter-SharedEntityList {
+    background-color: #203fff;
+}

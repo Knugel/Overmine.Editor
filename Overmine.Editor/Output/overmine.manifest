@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 2738362674
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5ac9adc1f9f9ac2c9b4a8da590d64ad6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4b3527f5f0deb08eb703e191543c0ce1
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 544464033, guid: 1c8ec480ccbe12447bb0a78c5e04958b, type: 3}
+- Class: 114
+  Script: {fileID: 1808626219, guid: 1c8ec480ccbe12447bb0a78c5e04958b, type: 3}
+- Class: 114
+  Script: {fileID: -1039079324, guid: 1c8ec480ccbe12447bb0a78c5e04958b, type: 3}
+- Class: 114
+  Script: {fileID: -1009901399, guid: 1c8ec480ccbe12447bb0a78c5e04958b, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Build/Items/Debug-Sprite.png
+- Assets/Build/Items/Add Status Effect.asset
+- Assets/Build/Items/Bramble Vest.prefab
+- Assets/Build/Items/Bramble Vest.asset
+- Assets/Build/Items/Bramble Vest Effect.asset
+Dependencies: []
