@@ -10,7 +10,7 @@ namespace Editor.Graph.Serialization
     public class SharedVariableConverter : JsonConverter<SharedVariable>
     {
         public override void WriteJson(JsonWriter writer, SharedVariable value, JsonSerializer serializer)
-        { 
+        {
             var obj = new JObject
             {
                 { "Type", NodeSerializer.EvaluateType(value.GetType()) },
@@ -32,20 +32,7 @@ namespace Editor.Graph.Serialization
             
             if (!string.IsNullOrEmpty(value.Name))
             {
-                var replaced = value.Name.Replace("Index", "").Trim();
-                
-                if (int.TryParse(replaced, out var idx))
-                {
-                    var field = value.GetType().GetField("mValue", BindingFlags.Instance | BindingFlags.NonPublic);
-                    obj.Add(field.FieldType.Name + "mValue", idx);
-                    obj.Add("Name", null);
-
-                    obj.Remove("IsShared");
-                }
-                else
-                {
-                    obj.Add("Name", value.Name);
-                }
+                obj.Add("Name", value.Name);
             }
             else
             {

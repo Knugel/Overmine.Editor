@@ -53,10 +53,10 @@ MonoBehaviour:
     outputFieldName: output
     inputPortIdentifier: 
     outputPortIdentifier: output
-  - GUID: 64805070-b2fd-47fd-b9cd-37576584e353
+  - GUID: 4537e4cf-9b31-4034-9695-9bdf366adac2
     owner: {fileID: 11400000}
     inputNodeGUID: 4b840b7e-500d-4252-bc89-94a034f735e9
-    outputNodeGUID: 9358950a-e691-4957-8efd-8b4e8307aeff
+    outputNodeGUID: e8541f1b-1805-482e-84e0-6bf45b522214
     inputFieldName: m_statusEffect
     outputFieldName: output
     inputPortIdentifier: 
@@ -85,8 +85,8 @@ MonoBehaviour:
   - id: 13
   serializedParameterList: []
   stickyNotes: []
-  position: {x: 43, y: -15, z: 0}
-  scale: {x: 1.15, y: 1.15, z: 1}
+  position: {x: 126, y: 134, z: 0}
+  scale: {x: 0.7561437, y: 0.7561437, z: 1}
   PreProcess: 0
   AutoStart: 1
   RestartWhenComplete: 1
@@ -135,10 +135,10 @@ MonoBehaviour:
           mNetworkSync: 0
           mValue: {fileID: 0}
         m_statusEffect:
-          mIsShared: 1
+          mIsShared: 0
           mIsGlobal: 0
           mIsDynamic: 0
-          mName: Index 0
+          mName: 
           mPropertyMapping: 
           mPropertyMappingOwner: {fileID: 0}
           mNetworkSync: 0
@@ -376,18 +376,18 @@ MonoBehaviour:
     00000005:
       type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
       data:
-        GUID: 9358950a-e691-4957-8efd-8b4e8307aeff
+        GUID: e8541f1b-1805-482e-84e0-6bf45b522214
         computeOrder: 3
         position:
           serializedVersion: 2
-          x: 675.315
-          y: 378
+          x: 674.5
+          y: 377.5
           width: 81
           height: 23
         expanded: 0
         debug: 0
         nodeLock: 0
-        parameterGUID: 18a5d1c8-a659-42bb-aebd-067e66b2f537
+        parameterGUID: 3677195f-3940-4cc5-8a14-7f63e95f1c4c
         accessor: 0
     00000006:
       type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Assembly-CSharp-Editor}
@@ -543,9 +543,9 @@ MonoBehaviour:
           mPropertyMappingOwner: {fileID: 0}
           mNetworkSync: 0
     0000000D:
-      type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Assembly-CSharp-Editor}
+      type: {class: ObjectParameter, ns: Editor.Graph.Parameters, asm: Assembly-CSharp-Editor}
       data:
-        guid: 18a5d1c8-a659-42bb-aebd-067e66b2f537
+        guid: 3677195f-3940-4cc5-8a14-7f63e95f1c4c
         name: Index 0
         type: 
         serializedValue:
@@ -555,15 +555,6 @@ MonoBehaviour:
         input: 1
         settings:
           id: 21
-        Value:
-          mIsShared: 1
-          mIsGlobal: 0
-          mIsDynamic: 0
-          mName: Index 0
-          mPropertyMapping: 
-          mPropertyMappingOwner: {fileID: 0}
-          mNetworkSync: 0
-          mValue: {fileID: 0}
     0000000E:
       type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
       data:
@@ -611,4 +602,4 @@ MonoBehaviour:
       data:
         isHidden: 0
         expanded: 0
-        guid: 18a5d1c8-a659-42bb-aebd-067e66b2f537
+        guid: 3677195f-3940-4cc5-8a14-7f63e95f1c4c

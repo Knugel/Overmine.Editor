@@ -140,7 +140,23 @@ namespace Editor.Graph.Serialization
                     if (int.TryParse(replaced, out var idx))
                     {
                         idxNodes.Add(port.fieldName);
-                        obj.Add(port.fieldInfo.FieldType.Name + port.fieldName, JToken.FromObject(idx, Serializer));
+
+                        if (typeof(SharedVariable).IsAssignableFrom(port.fieldInfo.FieldType) ||
+                            port.fieldInfo.FieldType == typeof(SharedVariable))
+                        {
+                            var valueField = port.fieldInfo.FieldType.GetField("mValue", BindingFlags.Instance | BindingFlags.NonPublic);
+                            
+                            obj.Add(port.fieldInfo.FieldType.Name + port.fieldName, new JObject
+                            {
+                                { "Type", EvaluateType(port.fieldInfo.FieldType) },
+                                { "Name", null },
+                                { valueField.FieldType.Name + "mValue", idx }
+                            });
+                        }
+                        else
+                        {
+                            obj.Add(port.fieldInfo.FieldType.Name + port.fieldName, JToken.FromObject(idx, Serializer));
+                        }
                     }
                 }
             }

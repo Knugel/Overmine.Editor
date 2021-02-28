@@ -20,7 +20,6 @@ namespace Editor.Export.Exporters
             result.SetField("m_guid", source.guid);
             result.SetField("m_name", source.Name);
             result.SetField("m_type", source.Type);
-            Debug.Log(source.guid + ":" + result.guid);
             return null;
         }
     }
