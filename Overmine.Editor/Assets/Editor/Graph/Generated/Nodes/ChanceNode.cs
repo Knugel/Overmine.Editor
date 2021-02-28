@@ -13,7 +13,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Chance"), GraphProcessor.ShowAsDrawer]
         public BehaviorDesigner.Runtime.SharedFloat m_chance;
 
-        [GraphProcessor.Output, GraphProcessor.Vertical]
+        [GraphProcessor.Output(allowMultiple = false), GraphProcessor.Vertical]
         public Editor.Graph.Nodes.ControlFlow Children;
     }
 }

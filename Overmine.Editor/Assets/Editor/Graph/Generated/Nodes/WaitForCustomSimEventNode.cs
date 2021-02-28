@@ -22,7 +22,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("End On Failure"), GraphProcessor.ShowAsDrawer]
         public BehaviorDesigner.Runtime.SharedBool m_endOnFailure;
 
-        [GraphProcessor.Output, GraphProcessor.Vertical]
+        [GraphProcessor.Output(allowMultiple = false), GraphProcessor.Vertical]
         public Editor.Graph.Nodes.ControlFlow Children;
         [GraphProcessor.Input("Hibernate"), GraphProcessor.ShowAsDrawer]
         public BehaviorDesigner.Runtime.SharedBool m_hibernate;

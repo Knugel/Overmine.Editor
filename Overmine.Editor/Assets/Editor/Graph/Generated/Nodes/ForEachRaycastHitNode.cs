@@ -41,7 +41,7 @@ namespace Overmine.Generated
 
         public UnityEngine.AnimationCurve m_coneCurve;
 
-        [GraphProcessor.Output, GraphProcessor.Vertical]
+        [GraphProcessor.Output(allowMultiple = false), GraphProcessor.Vertical]
         public Editor.Graph.Nodes.ControlFlow Children;
     }
 }

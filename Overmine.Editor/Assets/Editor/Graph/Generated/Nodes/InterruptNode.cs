@@ -10,7 +10,7 @@ namespace Overmine.Generated
 
         public override System.Type Type => typeof(BehaviorDesigner.Runtime.Tasks.Interrupt);
 
-        [GraphProcessor.Output, GraphProcessor.Vertical]
+        [GraphProcessor.Output(allowMultiple = false), GraphProcessor.Vertical]
         public Editor.Graph.Nodes.ControlFlow Children;
     }
 }

@@ -19,7 +19,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Reverse"), GraphProcessor.ShowAsDrawer]
         public BehaviorDesigner.Runtime.SharedBool m_reverse;
 
-        [GraphProcessor.Output, GraphProcessor.Vertical]
+        [GraphProcessor.Output(allowMultiple = false), GraphProcessor.Vertical]
         public Editor.Graph.Nodes.ControlFlow Children;
     }
 }

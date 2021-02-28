@@ -19,7 +19,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Wait Until Task Available"), GraphProcessor.ShowAsDrawer]
         public BehaviorDesigner.Runtime.SharedBool waitUntilTaskAvailable;
 
-        [GraphProcessor.Output, GraphProcessor.Vertical]
+        [GraphProcessor.Output(allowMultiple = false), GraphProcessor.Vertical]
         public Editor.Graph.Nodes.ControlFlow Children;
     }
 }

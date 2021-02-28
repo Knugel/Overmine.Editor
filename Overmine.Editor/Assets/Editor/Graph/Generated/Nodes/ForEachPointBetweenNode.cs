@@ -22,7 +22,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Step Size"), GraphProcessor.ShowAsDrawer]
         public BehaviorDesigner.Runtime.SharedFloat m_stepSize;
 
-        [GraphProcessor.Output, GraphProcessor.Vertical]
+        [GraphProcessor.Output(allowMultiple = false), GraphProcessor.Vertical]
         public Editor.Graph.Nodes.ControlFlow Children;
     }
 }

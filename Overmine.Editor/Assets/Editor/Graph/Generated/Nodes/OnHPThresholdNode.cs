@@ -19,7 +19,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Every Percent"), GraphProcessor.ShowAsDrawer]
         public BehaviorDesigner.Runtime.SharedFloat m_everyPercent;
 
-        [GraphProcessor.Output, GraphProcessor.Vertical]
+        [GraphProcessor.Output(allowMultiple = false), GraphProcessor.Vertical]
         public Editor.Graph.Nodes.ControlFlow Children;
     }
 }

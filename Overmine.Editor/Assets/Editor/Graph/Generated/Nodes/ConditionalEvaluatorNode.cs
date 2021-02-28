@@ -15,7 +15,7 @@ namespace Overmine.Generated
 
         public BehaviorDesigner.Runtime.Tasks.Conditional conditionalTask;
 
-        [GraphProcessor.Output, GraphProcessor.Vertical]
+        [GraphProcessor.Output(allowMultiple = false), GraphProcessor.Vertical]
         public Editor.Graph.Nodes.ControlFlow Children;
     }
 }

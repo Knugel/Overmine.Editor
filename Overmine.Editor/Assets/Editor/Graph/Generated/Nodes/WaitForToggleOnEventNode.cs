@@ -19,7 +19,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Timeout"), GraphProcessor.ShowAsDrawer]
         public BehaviorDesigner.Runtime.SharedFloat m_timeout;
 
-        [GraphProcessor.Output, GraphProcessor.Vertical]
+        [GraphProcessor.Output(allowMultiple = false), GraphProcessor.Vertical]
         public Editor.Graph.Nodes.ControlFlow Children;
         /* The type Thor.WaitForToggleEvent.ToggleType is private and has been replaced by 'object'!*/
         [GraphProcessor.ShowInInspector]

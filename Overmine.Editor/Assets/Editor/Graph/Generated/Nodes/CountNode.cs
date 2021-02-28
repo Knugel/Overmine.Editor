@@ -13,7 +13,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Count"), GraphProcessor.ShowAsDrawer]
         public BehaviorDesigner.Runtime.SharedInt m_count;
 
-        [GraphProcessor.Output, GraphProcessor.Vertical]
+        [GraphProcessor.Output(allowMultiple = false), GraphProcessor.Vertical]
         public Editor.Graph.Nodes.ControlFlow Children;
     }
 }
