@@ -33,3 +33,7 @@
 .parameter-SharedEntityList {
     background-color: #203fff;
 }
+
+.parameter-SharedDataObject {
+    background-color: #aaaaaa;
+}

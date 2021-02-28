@@ -42,9 +42,14 @@
     --port-color: #aaaaaa;
 }
 
+.Port_SharedDataObject {
+    --port-color: #aaaaaa;
+}
+
 .Port_SharedEntityList {
     --port-color: #203fff;
 }
+
 
 .Port_SharedEntityList > #connector {
     border-radius: 0;
