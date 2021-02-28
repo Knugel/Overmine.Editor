@@ -311,7 +311,7 @@ MonoBehaviour:
   - id: 39
   serializedParameterList: []
   stickyNotes: []
-  position: {x: 298, y: -108, z: 0}
+  position: {x: 0.9999938, y: -206, z: 0}
   scale: {x: 0.65751624, y: 0.65751624, z: 1}
   PreProcess: 0
   AutoStart: 1
