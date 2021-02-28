@@ -1,6 +1,5 @@
 using System.IO;
 using Data;
-using Editor.Data;
 using Thor;
 using UnityEditor;
 using UnityEngine;

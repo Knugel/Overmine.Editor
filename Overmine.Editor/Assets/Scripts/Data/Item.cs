@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Data
 {
     [CreateAssetMenu(fileName = "Item", menuName = "Data/Item")]
-    public class Item : EntityInfo, ISerializationCallbackReceiver
+    public class Item : EntityInfo
     {
         public ItemData.ItemHint Hint;
 
@@ -51,13 +51,5 @@ namespace Data
         public List<Requirement> DropRequirements;
 
         public List<Requirement> DiscoverRequirements;
-        
-        public void OnBeforeSerialize()
-        {
-            if (string.IsNullOrEmpty(m_guid))
-                m_guid = GUID.get();
-        }
-
-        public void OnAfterDeserialize() { }
     }
 }

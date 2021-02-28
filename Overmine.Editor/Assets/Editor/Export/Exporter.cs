@@ -17,7 +17,8 @@ namespace Editor.Export
         {
             { typeof(Item), new ItemExporter() },
             { typeof(BehaviourGraph), new BehaviourGraphExporter() },
-            { typeof(EntityData), new EntityDataExporter() },
+            { typeof(EntityInfo), new EntityDataExporter() },
+            { typeof(Resource), new ResourceDataExporter() },
             { typeof(GameObject), new GameObjectExporter() },
             { typeof(Sprite), new SpriteExporter() }
         };
@@ -85,7 +86,10 @@ namespace Editor.Export
                 _assets.Add(new ExportResult(source, result));
                 
                 if (typeof(MonoBehaviour).IsAssignableFrom(originalType))
-                    return (result as GameObject)?.GetComponent(originalType);
+                {
+                    var mapped = ComponentMappings[originalType];
+                    return (result as GameObject)?.GetComponent(mapped);
+                }
                 
                 return result;
             }

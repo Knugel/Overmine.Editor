@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Data
 {
-    public class EntityInfo : DataObject
+    public class EntityInfo : Identifiable
     {
         public Sprite Icon;
         
