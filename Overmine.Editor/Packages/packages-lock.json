@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.alelievr.node-graph-processor": {
-      "version": "file:C:/Users/fhofm/Documents/Programming/Unity/Overmine.Editor/NodeGraphProcessor/Assets/com.alelievr.NodeGraphProcessor",
+      "version": "file:../../NodeGraphProcessor/Assets/com.alelievr.NodeGraphProcessor",
       "depth": 0,
       "source": "local",
       "dependencies": {}

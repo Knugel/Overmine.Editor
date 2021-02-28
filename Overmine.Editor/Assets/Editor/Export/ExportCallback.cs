@@ -9,19 +9,20 @@ namespace Editor.Export
 {
     public static class ExportCallback
     {
-        public const string Path = "Assets/Build";
+        public const string BuildPath = "Assets/Build";
+        public const string ExportPath = "Output";
         
         [MenuItem("Overmine/Build")]
         public static void BuildAssetBundle()
         {
-            if (Directory.Exists(Path))
+            if (Directory.Exists(BuildPath))
             {
-                Directory.Delete(Path, true);
-                Directory.CreateDirectory(Path);
+                Directory.Delete(BuildPath, true);
+                Directory.CreateDirectory(BuildPath);
             }
 
             var assetsPaths = GatherAssets();
-            var exporter = new Exporter(Path);
+            var exporter = new Exporter(BuildPath);
 
             foreach (var path in assetsPaths)
                 exporter.Export(path.Asset);
@@ -37,12 +38,18 @@ namespace Editor.Export
         public static void BundleAssetBundle()
         {
             BuildAssetBundle();
-            
-            BuildPipeline.BuildAssetBundles("Output", BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows64);
+
+            if (Directory.Exists(ExportPath))
+            {
+                Directory.Delete(ExportPath, true);
+            }
+            Directory.CreateDirectory(ExportPath);
+
+            BuildPipeline.BuildAssetBundles(ExportPath, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows64);
             
             // Delete unnecessary bundles
-            File.Delete("Output/Output");
-            File.Delete("Output/Output.manifest");
+            File.Delete(Path.Combine(ExportPath, "Output"));
+            File.Delete(Path.Combine(ExportPath, "Output.manifest"));
         }
 
         private static IEnumerable<AssetPath> GatherAssets()
