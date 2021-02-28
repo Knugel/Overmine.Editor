@@ -13,7 +13,7 @@ namespace Overmine.Generated
         [GraphProcessor.Input("Target")]
         public Thor.SharedEntity m_target;
 
-        [GraphProcessor.Input("Loc I D")]
+        [GraphProcessor.Input("Loc ID")]
         public Thor.LocID m_locID;
 
     }

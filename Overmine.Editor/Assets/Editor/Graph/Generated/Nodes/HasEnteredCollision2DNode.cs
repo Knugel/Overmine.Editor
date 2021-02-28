@@ -3,10 +3,10 @@
 
 namespace Overmine.Generated
 {
-    [System.Serializable, GraphProcessor.NodeMenuItem("Has Entered Collision2 D")]
+    [System.Serializable, GraphProcessor.NodeMenuItem("Has Entered Collision2D")]
     public class HasEnteredCollision2DNode : Editor.Graph.Nodes.AbstractTaskNode
     {
-        public override string name => "Has Entered Collision2 D";
+        public override string name => "Has Entered Collision2D";
 
         public override System.Type Type => typeof(BehaviorDesigner.Runtime.Tasks.HasEnteredCollision2D);
 

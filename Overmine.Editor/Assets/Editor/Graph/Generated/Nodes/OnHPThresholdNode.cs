@@ -3,10 +3,10 @@
 
 namespace Overmine.Generated
 {
-    [System.Serializable, GraphProcessor.NodeMenuItem("On H P Threshold")]
+    [System.Serializable, GraphProcessor.NodeMenuItem("On HP Threshold")]
     public class OnHPThresholdNode : Editor.Graph.Nodes.AbstractTaskNode
     {
-        public override string name => "On H P Threshold";
+        public override string name => "On HP Threshold";
 
         public override System.Type Type => typeof(Thor.OnHPThreshold);
 

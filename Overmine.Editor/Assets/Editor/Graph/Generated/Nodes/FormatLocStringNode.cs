@@ -10,7 +10,7 @@ namespace Overmine.Generated
 
         public override System.Type Type => typeof(Thor.FormatLocString);
 
-        [GraphProcessor.Input("Loc I D")]
+        [GraphProcessor.Input("Loc ID")]
         public Thor.LocID m_locID;
 
         [GraphProcessor.Input("Argument")]

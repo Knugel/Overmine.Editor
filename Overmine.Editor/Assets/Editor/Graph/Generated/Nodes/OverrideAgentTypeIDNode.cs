@@ -3,10 +3,10 @@
 
 namespace Overmine.Generated
 {
-    [System.Serializable, GraphProcessor.NodeMenuItem("Override Agent Type I D")]
+    [System.Serializable, GraphProcessor.NodeMenuItem("Override Agent Type ID")]
     public class OverrideAgentTypeIDNode : Editor.Graph.Nodes.AbstractTaskNode
     {
-        public override string name => "Override Agent Type I D";
+        public override string name => "Override Agent Type ID";
 
         public override System.Type Type => typeof(Thor.OverrideAgentTypeID);
 

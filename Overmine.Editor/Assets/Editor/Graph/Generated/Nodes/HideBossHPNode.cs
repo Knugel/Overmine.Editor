@@ -3,10 +3,10 @@
 
 namespace Overmine.Generated
 {
-    [System.Serializable, GraphProcessor.NodeMenuItem("Hide Boss H P")]
+    [System.Serializable, GraphProcessor.NodeMenuItem("Hide Boss HP")]
     public class HideBossHPNode : Editor.Graph.Nodes.AbstractTaskNode
     {
-        public override string name => "Hide Boss H P";
+        public override string name => "Hide Boss HP";
 
         public override System.Type Type => typeof(Thor.HideBossHP);
 

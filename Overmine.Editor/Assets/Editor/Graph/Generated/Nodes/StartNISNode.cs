@@ -3,10 +3,10 @@
 
 namespace Overmine.Generated
 {
-    [System.Serializable, GraphProcessor.NodeMenuItem("Start N I S")]
+    [System.Serializable, GraphProcessor.NodeMenuItem("Start NIS")]
     public class StartNISNode : Editor.Graph.Nodes.AbstractTaskNode
     {
-        public override string name => "Start N I S";
+        public override string name => "Start NIS";
 
         public override System.Type Type => typeof(Thor.StartNIS);
 

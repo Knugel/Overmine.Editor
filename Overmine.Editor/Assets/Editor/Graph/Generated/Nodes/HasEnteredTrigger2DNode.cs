@@ -3,10 +3,10 @@
 
 namespace Overmine.Generated
 {
-    [System.Serializable, GraphProcessor.NodeMenuItem("Has Entered Trigger2 D")]
+    [System.Serializable, GraphProcessor.NodeMenuItem("Has Entered Trigger2D")]
     public class HasEnteredTrigger2DNode : Editor.Graph.Nodes.AbstractTaskNode
     {
-        public override string name => "Has Entered Trigger2 D";
+        public override string name => "Has Entered Trigger2D";
 
         public override System.Type Type => typeof(BehaviorDesigner.Runtime.Tasks.HasEnteredTrigger2D);
 

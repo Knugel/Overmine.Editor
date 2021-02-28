@@ -3,14 +3,14 @@
 
 namespace Overmine.Generated
 {
-    [System.Serializable, GraphProcessor.NodeMenuItem("Compare Change H P Result")]
+    [System.Serializable, GraphProcessor.NodeMenuItem("Compare Change HP Result")]
     public class CompareChangeHPResultNode : Editor.Graph.Nodes.AbstractTaskNode
     {
-        public override string name => "Compare Change H P Result";
+        public override string name => "Compare Change HP Result";
 
         public override System.Type Type => typeof(Thor.CompareChangeHPResult);
 
-        [GraphProcessor.Input("Change H P Result")]
+        [GraphProcessor.Input("Change HP Result")]
         public BehaviorDesigner.Runtime.SharedChangeHPResult m_changeHPResult;
 
         [GraphProcessor.Input("Compare To")]

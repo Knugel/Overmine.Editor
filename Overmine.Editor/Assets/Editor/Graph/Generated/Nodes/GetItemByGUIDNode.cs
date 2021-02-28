@@ -3,10 +3,10 @@
 
 namespace Overmine.Generated
 {
-    [System.Serializable, GraphProcessor.NodeMenuItem("Get Item By G U I D")]
+    [System.Serializable, GraphProcessor.NodeMenuItem("Get Item By GUID")]
     public class GetItemByGUIDNode : Editor.Graph.Nodes.AbstractTaskNode
     {
-        public override string name => "Get Item By G U I D";
+        public override string name => "Get Item By GUID";
 
         public override System.Type Type => typeof(Thor.GetItemByGUID);
 

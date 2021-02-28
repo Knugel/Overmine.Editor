@@ -3,10 +3,10 @@
 
 namespace Overmine.Generated
 {
-    [System.Serializable, GraphProcessor.NodeMenuItem("Set Current H P")]
+    [System.Serializable, GraphProcessor.NodeMenuItem("Set Current HP")]
     public class SetCurrentHPNode : Editor.Graph.Nodes.AbstractTaskNode
     {
-        public override string name => "Set Current H P";
+        public override string name => "Set Current HP";
 
         public override System.Type Type => typeof(Thor.SetCurrentHP);
 
