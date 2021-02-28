@@ -7,6 +7,7 @@ using Editor.Export.Exporters;
 using Thor;
 using UnityEditor;
 using UnityEngine;
+using Entity = Components.Entity;
 
 namespace Editor.Export
 {
@@ -19,6 +20,11 @@ namespace Editor.Export
             { typeof(EntityData), new EntityDataExporter() },
             { typeof(GameObject), new GameObjectExporter() },
             { typeof(Sprite), new SpriteExporter() }
+        };
+        
+        private static readonly Dictionary<Type, Type> ComponentMappings = new Dictionary<Type, Type>
+        {
+            { typeof(Entity), typeof(Thor.Entity) },
         };
         
         private readonly List<ExportResult> _assets;
@@ -45,6 +51,7 @@ namespace Editor.Export
             if (existing != null)
                 return existing.Result;
 
+            var originalType = source.GetType();
             var sType = source.GetType();
 
             if (!Exporters.TryGetValue(sType, out var exporter))
@@ -63,12 +70,23 @@ namespace Editor.Export
             {
                 _assets.Add(new ExportResult(source, prepared));
                 exporter.OnExport(path, source, prepared, this);
+
+                if (typeof(MonoBehaviour).IsAssignableFrom(originalType))
+                {
+                    var mapped = ComponentMappings[originalType];
+                    return (prepared as GameObject)?.GetComponent(mapped);
+                }
+
                 return prepared;
             }
             else
             {
                 var result = exporter.OnExport(path, source, null, this);
                 _assets.Add(new ExportResult(source, result));
+                
+                if (typeof(MonoBehaviour).IsAssignableFrom(originalType))
+                    return (result as GameObject)?.GetComponent(originalType);
+                
                 return result;
             }
         }
