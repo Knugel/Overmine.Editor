@@ -12,6 +12,7 @@ namespace Editor.Graph
 		private static string[] _requiredParameters = {
 			"Self",
 			"Owner",
+			"Target",
 			"Root",
 			"Link"
 		};

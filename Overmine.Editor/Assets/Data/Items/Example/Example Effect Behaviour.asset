@@ -1,0 +1,731 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc171efa20c17c4487fe5f77c5ede42, type: 3}
+  m_Name: Example Effect Behaviour
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  - id: 9
+  - id: 10
+  - id: 11
+  - id: 12
+  edges:
+  - GUID: 5f4a42ff-044a-4a11-8447-5a70212691d7
+    owner: {fileID: 11400000}
+    inputNodeGUID: 5c95e154-9735-4029-a4c0-de1c63940a88
+    outputNodeGUID: ede8d27b-5276-459b-9588-2dfe965e97f6
+    inputFieldName: In
+    outputFieldName: Children
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 0350d69b-de70-4cda-a9ee-136e95cf10f6
+    owner: {fileID: 11400000}
+    inputNodeGUID: 5c95e154-9735-4029-a4c0-de1c63940a88
+    outputNodeGUID: dda4f86c-5662-4a4c-9211-34711f444d2f
+    inputFieldName: m_input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 48d0b393-ed78-490c-ac59-75dbbfae237f
+    owner: {fileID: 11400000}
+    inputNodeGUID: cd6e2418-7383-4198-8a3d-a249a3f42b0d
+    outputNodeGUID: c8deb12c-c57a-494d-95e9-e690165adbfb
+    inputFieldName: In
+    outputFieldName: Out
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 8936b7a3-a463-4fdf-acf8-469bc5af752e
+    owner: {fileID: 11400000}
+    inputNodeGUID: ede8d27b-5276-459b-9588-2dfe965e97f6
+    outputNodeGUID: cd6e2418-7383-4198-8a3d-a249a3f42b0d
+    inputFieldName: In
+    outputFieldName: Children
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: f835ef7c-6012-4170-ba3f-3a6821907198
+    owner: {fileID: 11400000}
+    inputNodeGUID: adcf32e0-76a8-4fdb-85bb-0aca0cad394a
+    outputNodeGUID: cd6e2418-7383-4198-8a3d-a249a3f42b0d
+    inputFieldName: In
+    outputFieldName: Children
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 6395982d-afe6-4d55-aed4-010c48b8c657
+    owner: {fileID: 11400000}
+    inputNodeGUID: adcf32e0-76a8-4fdb-85bb-0aca0cad394a
+    outputNodeGUID: cfb7d6d2-8b66-4d2a-90ea-09aa0eb6032c
+    inputFieldName: m_target
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 55c74e31-de4a-4f35-b654-b6c2aa325252
+    owner: {fileID: 11400000}
+    inputNodeGUID: adcf32e0-76a8-4fdb-85bb-0aca0cad394a
+    outputNodeGUID: cfd78be0-5d18-4f20-905b-36209d0e669c
+    inputFieldName: m_amountOutput
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: e317ddd4-f929-4ba6-b098-c9017dc294aa
+    owner: {fileID: 11400000}
+    inputNodeGUID: 74d5103f-d48f-4881-af2b-12fb57bc97e2
+    outputNodeGUID: adcf32e0-76a8-4fdb-85bb-0aca0cad394a
+    inputFieldName: In
+    outputFieldName: Children
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 9156be02-c6ad-49b8-a144-3cd6c56b0888
+    owner: {fileID: 11400000}
+    inputNodeGUID: 74d5103f-d48f-4881-af2b-12fb57bc97e2
+    outputNodeGUID: 7a302604-4531-4481-adf2-a988a0dd14f2
+    inputFieldName: m_amount
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 91f9ee64-a55a-4fb9-9ea0-a4bfd475f5be
+    owner: {fileID: 11400000}
+    inputNodeGUID: 74d5103f-d48f-4881-af2b-12fb57bc97e2
+    outputNodeGUID: fce80346-2848-447c-bdf1-caf806f5a62e
+    inputFieldName: m_target
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: 465ddf2e-e41e-41a9-8077-28b8015ba739
+    owner: {fileID: 11400000}
+    inputNodeGUID: 74d5103f-d48f-4881-af2b-12fb57bc97e2
+    outputNodeGUID: f6bae1ee-7003-4062-9bdb-32e9a7283241
+    inputFieldName: m_source
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  - GUID: f7046baa-cbf3-408e-822e-4d78af7181f3
+    owner: {fileID: 11400000}
+    inputNodeGUID: 74d5103f-d48f-4881-af2b-12fb57bc97e2
+    outputNodeGUID: f66ea07e-e575-4ce1-b19e-bb40e375fc39
+    inputFieldName: m_resource
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: output
+  groups:
+  - title: Add Gold
+    color: {r: 0.5660378, g: 0.4745342, b: 0.18422927, a: 0.3}
+    position:
+      serializedVersion: 2
+      x: 443.86957
+      y: 677.2174
+      width: 345
+      height: 284.00003
+    size: {x: 400, y: 200}
+    innerNodeGUIDs:
+    - 74d5103f-d48f-4881-af2b-12fb57bc97e2
+    - fce80346-2848-447c-bdf1-caf806f5a62e
+    - f66ea07e-e575-4ce1-b19e-bb40e375fc39
+    - 7a302604-4531-4481-adf2-a988a0dd14f2
+    - f6bae1ee-7003-4062-9bdb-32e9a7283241
+  - title: Check Duration
+    color: {r: 0, g: 0, b: 0, a: 0.3}
+    position:
+      serializedVersion: 2
+      x: 128.60684
+      y: 331.26846
+      width: 245.00002
+      height: 235.00002
+    size: {x: 400, y: 200}
+    innerNodeGUIDs:
+    - ede8d27b-5276-459b-9588-2dfe965e97f6
+    - 5c95e154-9735-4029-a4c0-de1c63940a88
+    - dda4f86c-5662-4a4c-9211-34711f444d2f
+  stackNodes: []
+  pinnedElements:
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 25
+      width: 270
+      height: 258
+    opened: 1
+    editorType:
+      serializedType: Editor.Graph.Views.BehaviourParameterView, Overmine.Editor.Graph,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  exposedParameters:
+  - id: 13
+  - id: 14
+  - id: 15
+  - id: 16
+  - id: 17
+  - id: 18
+  - id: 19
+  serializedParameterList: []
+  stickyNotes: []
+  position: {x: 190, y: 28, z: 0}
+  scale: {x: 0.8695652, y: 0.8695652, z: 1}
+  PreProcess: 0
+  AutoStart: 1
+  RestartWhenComplete: 1
+  PauseWhenDisabled: 0
+  Interruptable: 0
+  Objects:
+  - {fileID: 11400000, guid: f484ba3e78276cc4692fc97dc3865750, type: 2}
+  references:
+    version: 1
+    00000000:
+      type: {class: EntryTaskNode, ns: Editor.Graph.Nodes, asm: Overmine.Editor.Graph}
+      data:
+        GUID: c8deb12c-c57a-494d-95e9-e690165adbfb
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 415.65787
+          y: 222.94896
+          width: 75
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+    00000001:
+      type: {class: InverterNode, ns: Overmine.Generated, asm: Overmine.Editor.Graph}
+      data:
+        GUID: ede8d27b-5276-459b-9588-2dfe965e97f6
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: 239.60683
+          y: 389.26846
+          width: 91
+          height: 54
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Instant: 1
+    00000002:
+      type: {class: PropertyFilterNode, ns: Overmine.Generated, asm: Overmine.Editor.Graph}
+      data:
+        GUID: 5c95e154-9735-4029-a4c0-de1c63940a88
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 221.5
+          y: 460
+          width: 126
+          height: 81
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Instant: 1
+        m_compareWith:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+        m_comparer:
+          lhsDynamic: 1
+          rhsDynamic: 0
+          lhsTypeName: Thor.StatusEffectExt
+          rhsTypeName: 
+          lhsMemberName: "Duration\t"
+          rhsMemberName: 
+          lhsValue: 
+          rhsValue: 0
+          comparisonName: ==
+        m_output:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+    00000003:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        GUID: dda4f86c-5662-4a4c-9211-34711f444d2f
+        computeOrder: 3
+        position:
+          serializedVersion: 2
+          x: 151.73157
+          y: 534.19666
+          width: 60
+          height: 23
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: cfe31427-a6a7-4e89-bb06-498d6d397b34
+        accessor: 0
+    00000004:
+      type: {class: WaitForTakesDamageEventNode, ns: Overmine.Generated, asm: Overmine.Editor.Graph}
+      data:
+        GUID: adcf32e0-76a8-4fdb-85bb-0aca0cad394a
+        computeOrder: 7
+        position:
+          serializedVersion: 2
+          x: 577.90546
+          y: 387.75616
+          width: 225
+          height: 279
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Instant: 1
+        m_attackerOutput:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+        m_originOutput:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+        m_amountOutput:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 0
+        m_hpDeltaOutput:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 0
+        m_typeOutput:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 0
+        m_target:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+        m_endOnFailure:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 0
+        m_timeout:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 0
+        m_hibernate:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 1
+    00000005:
+      type: {class: SequenceNode, ns: Overmine.Generated, asm: Overmine.Editor.Graph}
+      data:
+        GUID: cd6e2418-7383-4198-8a3d-a249a3f42b0d
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 402.95084
+          y: 288.02457
+          width: 100
+          height: 54.000004
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Instant: 1
+        abortType: 0
+    00000006:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        GUID: cfb7d6d2-8b66-4d2a-90ea-09aa0eb6032c
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 482.5
+          y: 558
+          width: 74
+          height: 23
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 45f2ec0b-a235-4886-bcc4-1f2bb8772114
+        accessor: 0
+    00000007:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        GUID: cfd78be0-5d18-4f20-905b-36209d0e669c
+        computeOrder: 6
+        position:
+          serializedVersion: 2
+          x: 426.5
+          y: 485.5
+          width: 131
+          height: 23
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: fce46dc8-8584-4f8f-9106-1cfeba0aa2c8
+        accessor: 0
+    00000008:
+      type: {class: ChangeResourceNode, ns: Overmine.Generated, asm: Overmine.Editor.Graph}
+      data:
+        GUID: 74d5103f-d48f-4881-af2b-12fb57bc97e2
+        computeOrder: 12
+        position:
+          serializedVersion: 2
+          x: 616.86957
+          y: 735.2174
+          width: 147
+          height: 201
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        Instant: 1
+        m_target:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+        m_resource: {fileID: 0}
+        m_amount:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 0
+        m_allowPartial:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 1
+        m_silent:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 0
+        m_source:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    00000009:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        GUID: 7a302604-4531-4481-adf2-a988a0dd14f2
+        computeOrder: 9
+        position:
+          serializedVersion: 2
+          x: 467.28476
+          y: 833.00006
+          width: 132.00002
+          height: 23
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: fce46dc8-8584-4f8f-9106-1cfeba0aa2c8
+        accessor: 0
+    0000000A:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        GUID: fce80346-2848-447c-bdf1-caf806f5a62e
+        computeOrder: 11
+        position:
+          serializedVersion: 2
+          x: 523.86957
+          y: 785.2174
+          width: 74
+          height: 23
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 45f2ec0b-a235-4886-bcc4-1f2bb8772114
+        accessor: 0
+    0000000B:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        GUID: f6bae1ee-7003-4062-9bdb-32e9a7283241
+        computeOrder: 8
+        position:
+          serializedVersion: 2
+          x: 541
+          y: 905
+          width: 59
+          height: 23
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: cfe31427-a6a7-4e89-bb06-498d6d397b34
+        accessor: 0
+    0000000C:
+      type: {class: ParameterNode, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        GUID: f66ea07e-e575-4ce1-b19e-bb40e375fc39
+        computeOrder: 10
+        position:
+          serializedVersion: 2
+          x: 517.86957
+          y: 809.2174
+          width: 81
+          height: 23
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        parameterGUID: 3801db01-168a-4611-b7cb-f445c91b24a8
+        accessor: 0
+    0000000D:
+      type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Overmine.Editor.Graph}
+      data:
+        guid: cfe31427-a6a7-4e89-bb06-498d6d397b34
+        name: Self
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 20
+        Value:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    0000000E:
+      type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Overmine.Editor.Graph}
+      data:
+        guid: 45f2ec0b-a235-4886-bcc4-1f2bb8772114
+        name: Owner
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 21
+        Value:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    0000000F:
+      type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Overmine.Editor.Graph}
+      data:
+        guid: 41623831-ea7a-4f09-9602-46d61af7f233
+        name: Target
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 22
+        Value:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    00000010:
+      type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Overmine.Editor.Graph}
+      data:
+        guid: 941fc877-8435-481a-bdc2-3096c0027e27
+        name: Root
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 23
+        Value:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    00000011:
+      type: {class: EntityParameter, ns: Editor.Graph.Parameters, asm: Overmine.Editor.Graph}
+      data:
+        guid: ac6e581d-7c56-4c87-818e-9b677fd13bd4
+        name: Link
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 24
+        Value:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: {fileID: 0}
+    00000012:
+      type: {class: IntParameter, ns: Editor.Graph.Parameters, asm: Overmine.Editor.Graph}
+      data:
+        guid: fce46dc8-8584-4f8f-9106-1cfeba0aa2c8
+        name: Damage Amount
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 25
+        Value:
+          mIsShared: 0
+          mIsGlobal: 0
+          mIsDynamic: 0
+          mName: 
+          mPropertyMapping: 
+          mPropertyMappingOwner: {fileID: 0}
+          mNetworkSync: 0
+          mValue: 0
+    00000013:
+      type: {class: ObjectParameter, ns: Editor.Graph.Parameters, asm: Overmine.Editor.Graph}
+      data:
+        guid: 3801db01-168a-4611-b7cb-f445c91b24a8
+        name: Index 0
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          id: 26
+    00000014:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: cfe31427-a6a7-4e89-bb06-498d6d397b34
+    00000015:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 45f2ec0b-a235-4886-bcc4-1f2bb8772114
+    00000016:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 41623831-ea7a-4f09-9602-46d61af7f233
+    00000017:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 941fc877-8435-481a-bdc2-3096c0027e27
+    00000018:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: ac6e581d-7c56-4c87-818e-9b677fd13bd4
+    00000019:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: fce46dc8-8584-4f8f-9106-1cfeba0aa2c8
+    0000001A:
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 3801db01-168a-4611-b7cb-f445c91b24a8
