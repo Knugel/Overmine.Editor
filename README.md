@@ -27,7 +27,8 @@ The following .dll files must be copied from the ``<your steam apps folder>\Unde
 
 ## Usage
 There currently exists no documentation.
-Look at the Example Relic found in ``Assets/Items`` or at existing Game Relics.
+
+For an example project setup look at [Overmine.Example](https://github.com/Knugel/Overmine.Example)
 
 ## Exporting
 To export the items into an AssetBundle click on ``Overmine/Bundle`` in the Unity toolbar. This will process all found items and create an AssetBundle in the ``Output`` folder of the project.
