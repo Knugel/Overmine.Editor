@@ -15,39 +15,9 @@ MonoBehaviour:
   m_guid: e1452518d8564f8fa6756d0f1d5ca2fb
   Icon: {fileID: 21300000, guid: 56b0f18b0f9830a48921de82ec79aa91, type: 3}
   Portrait: {fileID: 0}
-  DisplayName:
-    m_id: 0
-    m_text:
-      mIsShared: 0
-      mIsGlobal: 0
-      mIsDynamic: 0
-      mName: 
-      mPropertyMapping: 
-      mPropertyMappingOwner: {fileID: 0}
-      mNetworkSync: 0
-      mValue: 
-  Description:
-    m_id: 0
-    m_text:
-      mIsShared: 0
-      mIsGlobal: 0
-      mIsDynamic: 0
-      mName: 
-      mPropertyMapping: 
-      mPropertyMappingOwner: {fileID: 0}
-      mNetworkSync: 0
-      mValue: 
-  Flavor:
-    m_id: 0
-    m_text:
-      mIsShared: 0
-      mIsGlobal: 0
-      mIsDynamic: 0
-      mName: 
-      mPropertyMapping: 
-      mPropertyMappingOwner: {fileID: 0}
-      mNetworkSync: 0
-      mValue: 
+  DisplayName: item.overmine.example.name
+  Description: item.overmine.example.description
+  Flavor: item.overmine.example.flavor
   Rarity: 0
   ShowInJournal: 1
   IsDeprecated: 0

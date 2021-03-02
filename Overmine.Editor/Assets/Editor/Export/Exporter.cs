@@ -19,6 +19,7 @@ namespace Editor.Export
             { typeof(BehaviourGraph), new BehaviourGraphExporter() },
             { typeof(EntityInfo), new EntityDataExporter() },
             { typeof(Resource), new ResourceDataExporter() },
+            { typeof(LocDB), new LocDBExporter() }, 
             { typeof(GameObject), new GameObjectExporter() },
             { typeof(Sprite), new SpriteExporter() }
         };

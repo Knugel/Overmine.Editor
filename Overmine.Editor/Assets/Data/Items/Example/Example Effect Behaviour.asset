@@ -129,25 +129,25 @@ MonoBehaviour:
     color: {r: 0.5660378, g: 0.4745342, b: 0.18422927, a: 0.3}
     position:
       serializedVersion: 2
-      x: 443.86957
-      y: 677.2174
-      width: 345
-      height: 284.00003
+      x: 439.5
+      y: 673
+      width: 347
+      height: 283
     size: {x: 400, y: 200}
     innerNodeGUIDs:
-    - 74d5103f-d48f-4881-af2b-12fb57bc97e2
-    - fce80346-2848-447c-bdf1-caf806f5a62e
-    - f66ea07e-e575-4ce1-b19e-bb40e375fc39
     - 7a302604-4531-4481-adf2-a988a0dd14f2
+    - fce80346-2848-447c-bdf1-caf806f5a62e
     - f6bae1ee-7003-4062-9bdb-32e9a7283241
+    - f66ea07e-e575-4ce1-b19e-bb40e375fc39
+    - 74d5103f-d48f-4881-af2b-12fb57bc97e2
   - title: Check Duration
     color: {r: 0, g: 0, b: 0, a: 0.3}
     position:
       serializedVersion: 2
-      x: 128.60684
-      y: 331.26846
-      width: 245.00002
-      height: 235.00002
+      x: 127.24386
+      y: 329.75613
+      width: 261
+      height: 283
     size: {x: 400, y: 200}
     innerNodeGUIDs:
     - ede8d27b-5276-459b-9588-2dfe965e97f6
@@ -175,8 +175,8 @@ MonoBehaviour:
   - id: 19
   serializedParameterList: []
   stickyNotes: []
-  position: {x: 190, y: 28, z: 0}
-  scale: {x: 0.8695652, y: 0.8695652, z: 1}
+  position: {x: 467, y: 182, z: 0}
+  scale: {x: 0.57175326, y: 0.57175326, z: 1}
   PreProcess: 0
   AutoStart: 1
   RestartWhenComplete: 1
@@ -207,9 +207,9 @@ MonoBehaviour:
         computeOrder: 2
         position:
           serializedVersion: 2
-          x: 239.60683
-          y: 389.26846
-          width: 91
+          x: 240.24387
+          y: 387.75613
+          width: 90
           height: 54
         expanded: 0
         debug: 0
@@ -222,10 +222,10 @@ MonoBehaviour:
         computeOrder: 4
         position:
           serializedVersion: 2
-          x: 221.5
-          y: 460
+          x: 222.24387
+          y: 458.75613
           width: 126
-          height: 81
+          height: 129
         expanded: 0
         debug: 0
         nodeLock: 0
@@ -264,8 +264,8 @@ MonoBehaviour:
         computeOrder: 3
         position:
           serializedVersion: 2
-          x: 151.73157
-          y: 534.19666
+          x: 152.24387
+          y: 532.7561
           width: 60
           height: 23
         expanded: 0
@@ -307,10 +307,10 @@ MonoBehaviour:
           mNetworkSync: 0
           mValue: {fileID: 0}
         m_amountOutput:
-          mIsShared: 0
+          mIsShared: 1
           mIsGlobal: 0
           mIsDynamic: 0
-          mName: 
+          mName: Damage Amount
           mPropertyMapping: 
           mPropertyMappingOwner: {fileID: 0}
           mNetworkSync: 0
@@ -334,10 +334,10 @@ MonoBehaviour:
           mNetworkSync: 0
           mValue: 0
         m_target:
-          mIsShared: 0
+          mIsShared: 1
           mIsGlobal: 0
           mIsDynamic: 0
-          mName: 
+          mName: Owner
           mPropertyMapping: 
           mPropertyMappingOwner: {fileID: 0}
           mNetworkSync: 0
@@ -424,29 +424,29 @@ MonoBehaviour:
         computeOrder: 12
         position:
           serializedVersion: 2
-          x: 616.86957
-          y: 735.2174
-          width: 147
+          x: 615.5
+          y: 730
+          width: 146
           height: 201
         expanded: 0
         debug: 0
         nodeLock: 0
         Instant: 1
         m_target:
-          mIsShared: 0
+          mIsShared: 1
           mIsGlobal: 0
           mIsDynamic: 0
-          mName: 
+          mName: Owner
           mPropertyMapping: 
           mPropertyMappingOwner: {fileID: 0}
           mNetworkSync: 0
           mValue: {fileID: 0}
         m_resource: {fileID: 0}
         m_amount:
-          mIsShared: 0
+          mIsShared: 1
           mIsGlobal: 0
           mIsDynamic: 0
-          mName: 
+          mName: Damage Amount
           mPropertyMapping: 
           mPropertyMappingOwner: {fileID: 0}
           mNetworkSync: 0
@@ -470,10 +470,10 @@ MonoBehaviour:
           mNetworkSync: 0
           mValue: 0
         m_source:
-          mIsShared: 0
+          mIsShared: 1
           mIsGlobal: 0
           mIsDynamic: 0
-          mName: 
+          mName: Self
           mPropertyMapping: 
           mPropertyMappingOwner: {fileID: 0}
           mNetworkSync: 0
@@ -485,9 +485,9 @@ MonoBehaviour:
         computeOrder: 9
         position:
           serializedVersion: 2
-          x: 467.28476
-          y: 833.00006
-          width: 132.00002
+          x: 464.5
+          y: 828
+          width: 132
           height: 23
         expanded: 0
         debug: 0
@@ -501,9 +501,9 @@ MonoBehaviour:
         computeOrder: 11
         position:
           serializedVersion: 2
-          x: 523.86957
-          y: 785.2174
-          width: 74
+          x: 519.5
+          y: 780
+          width: 75
           height: 23
         expanded: 0
         debug: 0
@@ -517,9 +517,9 @@ MonoBehaviour:
         computeOrder: 8
         position:
           serializedVersion: 2
-          x: 541
-          y: 905
-          width: 59
+          x: 536.5
+          y: 900
+          width: 60
           height: 23
         expanded: 0
         debug: 0
@@ -533,8 +533,8 @@ MonoBehaviour:
         computeOrder: 10
         position:
           serializedVersion: 2
-          x: 517.86957
-          y: 809.2174
+          x: 513.5
+          y: 804
           width: 81
           height: 23
         expanded: 0
@@ -556,10 +556,10 @@ MonoBehaviour:
         settings:
           id: 20
         Value:
-          mIsShared: 0
+          mIsShared: 1
           mIsGlobal: 0
           mIsDynamic: 0
-          mName: 
+          mName: Self
           mPropertyMapping: 
           mPropertyMappingOwner: {fileID: 0}
           mNetworkSync: 0
@@ -578,10 +578,10 @@ MonoBehaviour:
         settings:
           id: 21
         Value:
-          mIsShared: 0
+          mIsShared: 1
           mIsGlobal: 0
           mIsDynamic: 0
-          mName: 
+          mName: Owner
           mPropertyMapping: 
           mPropertyMappingOwner: {fileID: 0}
           mNetworkSync: 0
@@ -600,10 +600,10 @@ MonoBehaviour:
         settings:
           id: 22
         Value:
-          mIsShared: 0
+          mIsShared: 1
           mIsGlobal: 0
           mIsDynamic: 0
-          mName: 
+          mName: Target
           mPropertyMapping: 
           mPropertyMappingOwner: {fileID: 0}
           mNetworkSync: 0
@@ -622,10 +622,10 @@ MonoBehaviour:
         settings:
           id: 23
         Value:
-          mIsShared: 0
+          mIsShared: 1
           mIsGlobal: 0
           mIsDynamic: 0
-          mName: 
+          mName: Root
           mPropertyMapping: 
           mPropertyMappingOwner: {fileID: 0}
           mNetworkSync: 0
@@ -644,10 +644,10 @@ MonoBehaviour:
         settings:
           id: 24
         Value:
-          mIsShared: 0
+          mIsShared: 1
           mIsGlobal: 0
           mIsDynamic: 0
-          mName: 
+          mName: Link
           mPropertyMapping: 
           mPropertyMappingOwner: {fileID: 0}
           mNetworkSync: 0
@@ -666,10 +666,10 @@ MonoBehaviour:
         settings:
           id: 25
         Value:
-          mIsShared: 0
+          mIsShared: 1
           mIsGlobal: 0
           mIsDynamic: 0
-          mName: 
+          mName: Damage Amount
           mPropertyMapping: 
           mPropertyMappingOwner: {fileID: 0}
           mNetworkSync: 0

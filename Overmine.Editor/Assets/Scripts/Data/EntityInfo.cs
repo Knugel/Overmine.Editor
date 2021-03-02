@@ -9,11 +9,11 @@ namespace Data
         
         public Sprite Portrait;
         
-        public LocID DisplayName;
+        public string DisplayName;
         
-        public LocID Description;
+        public string Description;
         
-        public LocID Flavor;
+        public string Flavor;
         
         public EntityData.RarityType Rarity;
         

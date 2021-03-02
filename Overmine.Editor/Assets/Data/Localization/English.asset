@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e50d200578743e3bad1d08e1dbbfa8f, type: 3}
+  m_Name: English
+  m_EditorClassIdentifier: 
+  Language: 0
+  Entries:
+  - Key: item.overmine.example.name
+    Text: Example Item
+  - Key: item.overmine.example.description
+    Text: Converts received damage into <sprite name=gold>
+  - Key: item.overmine.example.flavor
+    Text: Some clever flavor goes here.

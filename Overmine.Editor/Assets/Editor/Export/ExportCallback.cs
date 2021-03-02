@@ -56,7 +56,10 @@ namespace Editor.Export
         {
             var items = ExportHelper.FindAssetsByType<Item>();
             var statusEffects = ExportHelper.FindPrefabsOfType<StatusEffect>();
-            return items.Concat(statusEffects);
+            var localizations = ExportHelper.FindAssetsByType<LocDB>();
+            return items
+                .Concat(statusEffects)
+                .Concat(localizations);
         }
     }
 }

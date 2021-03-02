@@ -23,9 +23,9 @@ namespace Editor.Export.Exporters
             result.SetField("m_guid", source.guid);
             result.SetField("m_icon", exporter.Export(source.Icon));
             result.SetField("m_portrait", exporter.Export(source.Portrait));
-            result.SetField("m_displayName", source.DisplayName);
-            result.SetField("m_description", source.Description);
-            result.SetField("m_flavor", source.Flavor);
+            result.SetField("m_displayName", new LocID { Text = source.DisplayName });
+            result.SetField("m_description", new LocID { Text = source.Description });
+            result.SetField("m_flavor", new LocID { Text = source.Flavor });
             result.SetField("m_rarity", source.Rarity);
             result.SetField("m_showInJournal", source.ShowInJournal);
             result.SetField("m_isDeprecated", source.IsDeprecated);
