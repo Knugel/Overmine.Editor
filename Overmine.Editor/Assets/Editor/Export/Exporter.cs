@@ -20,6 +20,7 @@ namespace Editor.Export
             { typeof(EntityInfo), new EntityDataExporter() },
             { typeof(Resource), new ResourceDataExporter() },
             { typeof(LocDB), new LocDBExporter() }, 
+            { typeof(LootTable), new LootTableDataExporter() }, 
             { typeof(GameObject), new GameObjectExporter() },
             { typeof(Sprite), new SpriteExporter() }
         };

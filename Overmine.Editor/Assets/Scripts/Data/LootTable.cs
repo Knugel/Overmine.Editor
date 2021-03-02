@@ -6,10 +6,8 @@ using UnityEngine;
 namespace Data
 {
     [CreateAssetMenu(fileName = "Loot Table", menuName = "Data/Loot Table")]
-    public class LootTable : ScriptableObject, ISerializationCallbackReceiver
+    public class LootTable : Identifiable
     {
-        public string Guid;
-        
         public string Name;
 
         [Header("Rerolling")]
@@ -30,15 +28,7 @@ namespace Data
         {
             public int Weight;
 
-            public ItemData Item;
+            public Item Item;
         }
-        
-        public void OnBeforeSerialize()
-        {
-            if (string.IsNullOrEmpty(Guid))
-                Guid = GUID.get();
-        }
-
-        public void OnAfterDeserialize() { }
     }
 }
