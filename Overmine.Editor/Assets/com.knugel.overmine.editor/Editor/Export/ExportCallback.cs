@@ -4,6 +4,7 @@ using System.Linq;
 using Components;
 using Data;
 using UnityEditor;
+using UnityEngine;
 
 namespace Editor.Export
 {
@@ -30,7 +31,12 @@ namespace Editor.Export
             foreach (var result in exporter.Results)
             {
                 var path = AssetDatabase.GetAssetPath(result.Result);
-                AssetImporter.GetAtPath(path).SetAssetBundleNameAndVariant("Overmine", "");
+
+                var importer = AssetImporter.GetAtPath(path);
+                if(importer == null)
+                    Debug.LogError($"No import found for asset '{result.Source}'");
+                else
+                    importer.SetAssetBundleNameAndVariant("Overmine", "");
             }
         }
 

@@ -80,3 +80,6 @@ crashlytics-build.properties
 /[Aa]ssets/Build.meta
 
 /Output
+
+/[Aa]ssets/Data/
+/[Aa]ssets/Data.meta
