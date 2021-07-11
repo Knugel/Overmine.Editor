@@ -81,7 +81,7 @@ crashlytics-build.properties
 /[Aa]ssets/Data/
 /[Aa]ssets/Data.meta
 
-**/Libraries/*.dll*
+**/Libraries/*.dll
 
-!**/Libraries/Overmine.API.dll*
-!**/Libraries/Newtonsoft.Json.dll*
+!**/Libraries/Overmine.API.dll
+!**/Libraries/Newtonsoft.Json.dll
