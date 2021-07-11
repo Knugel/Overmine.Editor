@@ -14,8 +14,8 @@ namespace Editor.Locator
         {
             "BehaviorDesigner.dll", "BehaviorDesigner.Runtime.dll", "BugSplat.Unity.dll", "Cocuy.Unity.dll",
             "Colorful.Unity.dll", "DemiLib.dll", "Discord.Unity.dll", "DOTween.dll", "DOTween43.dll", "DOTween46.dll",
-            "DOTween50.dll", "DOTweenPro.dll", "FMOD.Unity.dll", "NavMesh.Unity.dll", "Newtonsoft.Json.dll",
-            "Overmine.API.dll", "ProceduralLightning.Unity.dll", "Rewired.Unity.dll", "Rewired_Core.dll",
+            "DOTween50.dll", "DOTweenPro.dll", "FMOD.Unity.dll", "NavMesh.Unity.dll", 
+            "ProceduralLightning.Unity.dll", "Rewired.Unity.dll", "Rewired_Core.dll",
             "Rewired_Windows.dll", "Steamworks.NET.dll", "SuperSplinesPro.Unity.dll", "UnderMine.dll",
             "Unity.TextMeshPro.dll"
         };
