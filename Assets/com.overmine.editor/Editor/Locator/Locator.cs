@@ -25,10 +25,10 @@ namespace Editor.Locator
         static Locator()
         {
             var existing = Directory.GetFiles(LibraryFolder)
+                .Where(IsValidDll)
                 .Select(Path.GetFileName)
                 .ToList();
             var missing = Required
-                .Except(existing)
                 .ToList();
             
             if (missing.Any())
@@ -46,7 +46,11 @@ namespace Editor.Locator
                     var path = Path.Combine(managed, file);
                     if (File.Exists(path))
                     {
-                        File.Copy(path, Path.Combine(LibraryFolder, file));
+                        var dest = Path.Combine(LibraryFolder, file);
+                        if(File.Exists(dest))
+                            File.Delete(dest);
+                        
+                        File.Copy(path, dest);
                     }
                     else
                     {
@@ -54,6 +58,12 @@ namespace Editor.Locator
                     }
                 }
             }
+        }
+
+        private static bool IsValidDll(string path)
+        {
+            var info = new FileInfo(path);
+            return info.Length > 0;
         }
 
         private static string GetLibraryFolder()
