@@ -1,0 +1,46 @@
+﻿#title-label {
+    font-size: 18px;
+    margin-right: 6px;
+}
+
+.node {
+    margin: 0;
+}
+
+#TopPortContainer, #BottomPortContainer
+{
+    height: 10px;
+    width: 100%;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#TopPortContainer .port, #BottomPortContainer .port
+{
+    height: 10px;
+    width: 16px;
+    margin-bottom: 0;
+    padding: 0;
+    flex-direction: row;
+    justify-content: center;
+    --port-color: #cccccc;
+}
+
+#TopPortContainer .port {
+    margin-top: 1px;
+}
+
+#BottomPortContainer .port {
+    margin-bottom: 3px;
+}
+
+#TopPortContainer .port #connector, #BottomPortContainer .port #connector {
+    padding: 0;
+    margin: 0;
+}
+
+#title-button-container, #collapse-button {
+    visibility: hidden !important;
+    width: 0 !important;
+}

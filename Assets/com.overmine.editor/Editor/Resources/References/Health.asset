@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1638799208, guid: 421ae4f72b4255642983b93487241616, type: 3}
+  m_Name: Health
+  m_EditorClassIdentifier: 
+  m_guid: d4d9f60c1fe844f0953fc3d445c93c69
+  m_name: hp
+  m_nameNegative: hp_gain
+  m_type: 1
+  m_allowNegativeModifiers: 1
+  m_associatedItem: {fileID: 0}

@@ -1,0 +1,19 @@
+{
+    "name": "Overmine.Example",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "BehaviorDesigner.dll",
+        "BehaviorDesigner.Runtime.dll",
+        "Overmine.API.dll",
+        "UnderMine.dll",
+        "Unity.TextMeshPro.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

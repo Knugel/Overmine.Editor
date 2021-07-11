@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1039079324, guid: 1c8ec480ccbe12447bb0a78c5e04958b, type: 3}
+  m_Name: Relic
+  m_EditorClassIdentifier: 
+  m_guid: 141a22f9-f9f1-4e3d-9e88-2b20b2fe77eb
+  m_icon: {fileID: 0}
+  m_portrait: {fileID: 0}
+  m_displayName:
+    m_id: 0
+    m_text:
+      mIsShared: 0
+      mIsGlobal: 0
+      mIsDynamic: 0
+      mName: 
+      mPropertyMapping: 
+      mPropertyMappingOwner: {fileID: 0}
+      mNetworkSync: 0
+      mValue: 
+  m_description:
+    m_id: 0
+    m_text:
+      mIsShared: 0
+      mIsGlobal: 0
+      mIsDynamic: 0
+      mName: 
+      mPropertyMapping: 
+      mPropertyMappingOwner: {fileID: 0}
+      mNetworkSync: 0
+      mValue: 
+  m_flavor:
+    m_id: 0
+    m_text:
+      mIsShared: 0
+      mIsGlobal: 0
+      mIsDynamic: 0
+      mName: 
+      mPropertyMapping: 
+      mPropertyMappingOwner: {fileID: 0}
+      mNetworkSync: 0
+      mValue: 
+  m_rarity: 0
+  m_showInJournal: 1
+  m_isDeprecated: 0
+  m_hint: 2097410
+  m_slot: relic
+  m_audio: event:/Items/Item_Land
+  m_tags: []
+  m_costGroups:
+  - type: 1
+    costs:
+    - mAmount: 1
+      mData: {fileID: 11400000, guid: a2d0cd9891e22c849bfca92c7196dd4f, type: 2}
+  - type: 2
+    costs:
+    - mAmount: 1
+      mData: {fileID: 11400000, guid: a2d0cd9891e22c849bfca92c7196dd4f, type: 2}
+  m_maxDropCount: 1
+  m_isDefault: 0
+  m_isDefaultDiscovered: 0
+  m_autoUnlock: 0
+  m_rerollable: 1
+  m_allowOnAltar: 1
+  m_pickedUpBehavior: {fileID: 0}
+  m_secondaryPickedUpBehavior: {fileID: 0}
+  m_isSpecialDrop: 0
+  m_isSpecialDiscovery: 0
+  m_comboPiece: {fileID: 0}
+  m_comboResult: {fileID: 0}
+  m_userData: 0
+  m_templateOverride: {fileID: 0}
+  m_dropRequirements: []
+  m_discoverRequirements: []

@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Water
+  - Hub
+  - Mine
+  - Dungeon
+  - Oil
+  - Stone
+  - Hole
+  - Ignore
+  - Hall
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Door
+  - Wall
+  - Dynamic
+  - Enemy
+  - Player
+  - Item
+  - NoClip
+  - Ghost
+  - ItemLaunch
+  - Projectile
+  - Grenade
+  - EnemyGhost
+  - Oil
+  - Poison
+  - 
+  - Reflective
+  - Dissolve
+  - Refraction
+  - Topmost
+  - Halo
+  - Debris
+  - DebrisView
+  - OilLow
+  - PosionLow
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: DefaultFX
+    uniqueID: 302627487
+    locked: 0
+  - name: Static
+    uniqueID: 174444981
+    locked: 0
+  - name: StaticFX
+    uniqueID: 3641188277
+    locked: 0
+  - name: Dynamic
+    uniqueID: 3900949865
+    locked: 0
+  - name: DynamicFX
+    uniqueID: 950715821
+    locked: 0
+  - name: Foreground
+    uniqueID: 4041222099
+    locked: 0
+  - name: ForegroundFX
+    uniqueID: 221045799
+    locked: 0
