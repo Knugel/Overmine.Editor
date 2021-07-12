@@ -5,7 +5,6 @@ using BehaviorDesigner.Runtime.Tasks;
 using Newtonsoft.Json.Linq;
 using Overmine.Editor.Graph;
 using Thor;
-using UnityEditor;
 using UnityEngine;
 
 namespace Editor.Serialization

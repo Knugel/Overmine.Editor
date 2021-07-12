@@ -108,7 +108,7 @@ namespace Overmine.Editor.Graph
                     continue;
                 }
                 
-                var choices = _inspectorObject.View.Properties.Select(x => x.Name).ToList();
+                var choices = _inspectorObject?.View?.Properties?.Select(x => x.Name).ToList() ?? new List<string>();
                 choices.Insert(0, "None");
 
                 var value = fInfo.GetValue(obj) as SharedVariable;

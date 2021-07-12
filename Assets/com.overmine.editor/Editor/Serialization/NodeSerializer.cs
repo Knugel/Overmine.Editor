@@ -82,7 +82,7 @@ namespace Editor.Serialization
             obj.Add("Instant", JToken.FromObject(node.Data.IsInstant, Serializer));
             obj.Add("NodeData", new JObject
             {
-                ["Offset"]=JToken.FromObject(node.Position, Serializer)
+                ["Offset"] = JToken.FromObject(node.Position, Serializer)
             });
 
             foreach (var field in GetSerializedFields(node.Type))
@@ -120,8 +120,9 @@ namespace Editor.Serialization
                         continue;
                     }
 
-                    if (value != null)
-                        obj.Add(field.FieldType.Name + field.Name, JToken.FromObject(value, Serializer));
+                    var name = field.FieldType.Name + field.Name;
+                    if (value != null && !obj.ContainsKey(name))
+                        obj.Add(name, JToken.FromObject(value, Serializer));
                 }
                 catch (Exception e)
                 {
@@ -214,7 +215,7 @@ namespace Editor.Serialization
                 toCheck = toCheck.BaseType;
             } while (toCheck != typeof(UnityEngine.Object) && toCheck != null);
 
-            return ret.Where(IsSerializedField);
+            return ret.Where(IsSerializedField).Distinct(new FieldInfoComparer());
         }
 
         private static bool IsSerializedField(FieldInfo info)
@@ -222,6 +223,29 @@ namespace Editor.Serialization
             if (!typeof(Task).IsAssignableFrom(info.DeclaringType))
                 return true;
             return info.Name != "id" && info.Name != "instant" && info.Name != "friendlyName";
+        }
+
+        class FieldInfoComparer : IEqualityComparer<FieldInfo>
+        {
+            public bool Equals(FieldInfo x, FieldInfo y)
+            {
+                if (ReferenceEquals(x, y)) return true;
+                if (ReferenceEquals(x, null)) return false;
+                if (ReferenceEquals(y, null)) return false;
+                if (x.GetType() != y.GetType()) return false;
+                return x.FieldType.Equals(y.FieldType) && x.Name.Equals(y.Name);
+            }
+
+            public int GetHashCode(FieldInfo obj)
+            {
+                unchecked
+                {
+                    int hash = 17;
+                    hash = hash * 31 + obj.FieldType.GetHashCode();
+                    hash = hash * 31 + obj.Name.GetHashCode();
+                    return hash;
+                }
+            }
         }
     }
 }
