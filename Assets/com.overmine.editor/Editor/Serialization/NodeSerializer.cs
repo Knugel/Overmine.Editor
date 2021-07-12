@@ -85,7 +85,7 @@ namespace Editor.Serialization
                 ["Offset"]=JToken.FromObject(node.Position, Serializer)
             });
 
-            foreach (var field in GetSerializedFields(node))
+            foreach (var field in GetSerializedFields(node.Type))
             {
                 try
                 {
@@ -162,13 +162,6 @@ namespace Editor.Serialization
             return ret;
         }
 
-        private static IEnumerable<FieldInfo> GetSerializedFields(NodeData node)
-        {
-            return node.Type
-                .GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-                .Where(x => x.IsPublic || x.GetCustomAttribute<SerializeField>() != null);
-        }
-        
         // From: https://www.codeproject.com/Questions/337574/Given-a-generic-type-how-do-I-get-the-generic-type
         public static string EvaluateType(Type type)
         {
@@ -206,6 +199,29 @@ namespace Editor.Serialization
             }
 
             return retType.ToString().Replace("+", ".");
+        }
+        
+        public static IEnumerable<FieldInfo> GetSerializedFields(Type type)
+        {
+            var ret = new List<FieldInfo>();
+            var toCheck = type;
+            
+            do
+            {
+                ret.AddRange(toCheck
+                    .GetFields(BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic)
+                    .Where(x => x.IsPublic || x.GetCustomAttribute<SerializeField>() != null));
+                toCheck = toCheck.BaseType;
+            } while (toCheck != typeof(UnityEngine.Object) && toCheck != null);
+
+            return ret.Where(IsSerializedField);
+        }
+
+        private static bool IsSerializedField(FieldInfo info)
+        {
+            if (!typeof(Task).IsAssignableFrom(info.DeclaringType))
+                return true;
+            return info.Name != "id" && info.Name != "instant" && info.Name != "friendlyName";
         }
     }
 }

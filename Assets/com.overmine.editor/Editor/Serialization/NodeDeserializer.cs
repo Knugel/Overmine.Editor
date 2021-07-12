@@ -1,15 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Editor.Serialization.Converters;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using Overmine.Editor.Graph;
 using Thor;
+using UnityEditor;
 using UnityEngine;
 
 namespace Editor.Serialization
@@ -25,6 +21,8 @@ namespace Editor.Serialization
             
             var entry = DeserializeNode(obj.GetValue("EntryTask"), data, view);
             var root = DeserializeNode(obj.GetValue("RootTask"), data, view);
+            DeserializeVariables(obj.GetValue("Variables"), view);
+            
             view.Connect(root, entry);
         }
 
@@ -76,9 +74,15 @@ namespace Editor.Serialization
                 type = TaskUtility.GetTypeWithinAssembly(obj.Value<string>("Type"));
             var instance = Activator.CreateInstance(type);
             
-            foreach (var field in GetSerializedFields(type))
+            foreach (var field in NodeSerializer.GetSerializedFields(type))
             {
                 var fName = field.FieldType.Name + field.Name;
+                if (typeof(SharedVariable).IsAssignableFrom(type) && field.Name != "mValue")
+                {
+                    fName = field.Name.Substring(1);
+                    fName = char.ToUpper(fName[0]) + fName.Substring(1);
+                }
+                
                 var jValue = obj.GetValue(fName);
                 object value;
                 
@@ -103,13 +107,6 @@ namespace Editor.Serialization
             }
 
             return instance;
-        }
-
-        private static IEnumerable<FieldInfo> GetSerializedFields(Type type)
-        {
-            return type
-                .GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-                .Where(x => x.IsPublic || x.GetCustomAttribute<SerializeField>() != null);
         }
     }
 }

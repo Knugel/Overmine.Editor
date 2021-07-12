@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using BehaviorDesigner.Runtime;
+using Editor.Serialization;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -59,51 +60,82 @@ namespace Overmine.Editor.Graph
                     field.BindProperty(element);
                     container.Add(field);
                 } while (element.NextVisible(false));
-
-                // Very ugly hack to get the non Serializable SharedVariable type to show up in the inspector
-                // TODO: Find a better way to do this.
-                // BUG: Doesn't currently work with nested SharedVariable types.
-                foreach (var fInfo in elementType.GetFields(BindingFlags.Instance | BindingFlags.Public |
-                                                            BindingFlags.NonPublic))
-                {
-                    if(fInfo.FieldType != typeof(SharedVariable))
-                        continue;
-                    
-                    var foldout = new Foldout
-                    {
-                        text = ObjectNames.NicifyVariableName(fInfo.Name)
-                    };
-                    var choices = _inspectorObject.View.Properties.Select(x => x.Name).ToList();
-                    choices.Insert(0, "None");
-
-                    var value = fInfo.GetValue(_inspectorObject.Selected[0].Data) as SharedVariable;
-
-                    var index = choices.IndexOf(value?.Name);
-                    if (index < 0)
-                        index = 0;
-
-                    var popup = new PopupField<string>("Variable", choices, index);
-                    popup.RegisterValueChangedCallback(ev =>
-                    {
-                        if (value == null)
-                        {
-                            var type = _inspectorObject.View.Properties.FirstOrDefault(x => x.Name == ev.newValue)?.Type;
-                            if (type != null)
-                            {
-                                value = Activator.CreateInstance(type) as SharedVariable;
-                            }
-                        }
-                        
-                        value.Name = ev.newValue;
-                        value.IsShared = value.Name != "None";
-                        fInfo.SetValue(_inspectorObject.Selected[0].Data, value);
-                        serializedObject.ApplyModifiedProperties();
-                    });
-                    foldout.Add(popup);
-                    container.Add(foldout);
-                }
+                
+                CreateSharedVariableUI(elementType, _inspectorObject.Selected[0].Data, container);
 
                 _root.Add(container);
+            }
+        }
+
+        private void CreateSharedVariableUI(Type type, object obj, VisualElement container)
+        {
+            var fields = NodeSerializer.GetSerializedFields(type);
+            foreach (var fInfo in fields)
+            {
+                var foldout = new Foldout
+                {
+                    text = ObjectNames.NicifyVariableName(fInfo.Name)
+                };
+                
+                if (fInfo.FieldType != typeof(SharedVariable))
+                {
+                    if (fInfo.FieldType.IsSerializable && !fInfo.FieldType.IsAbstract && !fInfo.FieldType.Namespace.StartsWith("System"))
+                    {
+                        var target= fInfo.GetValue(obj) ?? Activator.CreateInstance(fInfo.FieldType);
+                        fInfo.SetValue(obj, target);
+
+                        var name = $"unity-foldout-Selected.Array.data[0].Data.{fInfo.Name}";
+                        var existing = container.Q(name);
+
+                        if (existing != null)
+                        {
+                            CreateSharedVariableUI(fInfo.FieldType, target, existing);
+                        }
+                        else
+                        {
+                            existing = new Foldout
+                            {
+                                text = ObjectNames.NicifyVariableName(fInfo.Name)
+                            };
+
+                            CreateSharedVariableUI(fInfo.FieldType, target, existing);
+                            if(existing.childCount > 0)
+                                container.Add(existing);
+                        }
+                        
+                        existing.MarkDirtyRepaint();
+                    }
+                    continue;
+                }
+                
+                var choices = _inspectorObject.View.Properties.Select(x => x.Name).ToList();
+                choices.Insert(0, "None");
+
+                var value = fInfo.GetValue(obj) as SharedVariable;
+
+                var index = choices.IndexOf(value?.Name);
+                if (index < 0)
+                    index = 0;
+
+                var popup = new PopupField<string>("Variable", choices, index);
+                popup.RegisterValueChangedCallback(ev =>
+                {
+                    if (value == null)
+                    {
+                        var propType = _inspectorObject.View.Properties.FirstOrDefault(x => x.Name == ev.newValue)?.Type;
+                        if (propType != null)
+                        {
+                            value = Activator.CreateInstance(propType) as SharedVariable;
+                        }
+                    }
+                        
+                    value.Name = ev.newValue;
+                    value.IsShared = value.Name != "None";
+                    fInfo.SetValue(obj, value);
+                    serializedObject.ApplyModifiedProperties();
+                });
+                foldout.Add(popup);
+                container.Add(foldout);
             }
         }
 
