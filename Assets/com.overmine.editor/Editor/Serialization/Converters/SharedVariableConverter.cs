@@ -27,33 +27,42 @@ namespace Editor.Serialization.Converters
             }
             else if (value.IsShared)
             {
-                obj.Add("IsShared", true);
-                if (!string.IsNullOrEmpty(value.Name))
+                if (!string.IsNullOrEmpty(value.Name) && value.Name != "None")
                 {
                     obj.Add("Name", value.Name);
+                    obj.Add("IsShared", true);
+                }
+                else
+                {
+                    WriteValue(obj, value, serializer);
                 }
             }
             else
             {
-                obj.Add("Name", null);
-                
-                var sharedValue = value.GetValue();
-                if (sharedValue != null)
-                {
-                    var type = GetInnerType(value.GetType()) ?? sharedValue.GetType();
-
-                    if (IsReference(type))
-                    {
-                        obj.Add(type.Name + "mValue", JToken.FromObject(int.Parse(value.PropertyMapping), serializer));
-                    }
-                    else
-                    {
-                        obj.Add(type.Name + "mValue", JToken.FromObject(sharedValue, serializer));
-                    }
-                }
+                WriteValue(obj, value, serializer);
             }
 
             obj.WriteTo(writer);
+        }
+
+        private void WriteValue(JObject obj, SharedVariable value, JsonSerializer serializer)
+        {
+            obj.Add("Name", null);
+                
+            var sharedValue = value.GetValue();
+            if (sharedValue != null)
+            {
+                var type = GetInnerType(value.GetType()) ?? sharedValue.GetType();
+
+                if (IsReference(type))
+                {
+                    obj.Add(type.Name + "mValue", JToken.FromObject(int.Parse(value.PropertyMapping), serializer));
+                }
+                else
+                {
+                    obj.Add(type.Name + "mValue", JToken.FromObject(sharedValue, serializer));
+                }
+            }
         }
 
         private static bool IsReference(Type type)

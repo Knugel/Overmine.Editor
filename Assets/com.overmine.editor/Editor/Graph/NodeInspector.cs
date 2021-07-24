@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using BehaviorDesigner.Runtime;
 using Editor.Serialization;
 using UnityEditor;
@@ -81,7 +80,7 @@ namespace Overmine.Editor.Graph
                 {
                     if (fInfo.FieldType.IsSerializable && !fInfo.FieldType.IsAbstract && !fInfo.FieldType.Namespace.StartsWith("System"))
                     {
-                        var target= fInfo.GetValue(obj) ?? Activator.CreateInstance(fInfo.FieldType);
+                        var target= fInfo.GetValue(obj) ?? CreateTypeInstance(fInfo.FieldType);
                         fInfo.SetValue(obj, target);
 
                         var name = $"unity-foldout-Selected.Array.data[0].Data.{fInfo.Name}";
@@ -146,6 +145,13 @@ namespace Overmine.Editor.Graph
             var typeName = split[1];
             return AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(x => x.GetName().Name == assembly)
                 ?.GetType(typeName);
+        }
+
+        private static object CreateTypeInstance(Type type)
+        {
+            if (type.IsArray)
+                return Array.CreateInstance(type.GetElementType(), 0);
+            return Activator.CreateInstance(type);
         }
 
         public override VisualElement CreateInspectorGUI() => _root;

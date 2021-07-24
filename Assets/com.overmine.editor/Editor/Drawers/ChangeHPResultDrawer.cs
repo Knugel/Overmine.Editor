@@ -4,5 +4,5 @@ using UnityEditor;
 namespace Editor.Drawers
 {
     [CustomPropertyDrawer(typeof(HealthExt.ChangeHPResult))]
-    public class ChangeHPResultDrawer : FlaggedEnumDrawer<ItemData.ItemHint> { }
+    public class ChangeHPResultDrawer : FlaggedEnumDrawer<HealthExt.ChangeHPResult> { }
 }
