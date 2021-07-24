@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
@@ -18,8 +19,8 @@ namespace Editor.Serialization.Converters
             var value = reader.Value.ToString();
             value = value.Substring(1).Substring(0, value.Length - 2);
             var split = value.Split(',');
-            var x = float.Parse(split[0]);
-            var y = float.Parse(split[1]);
+            var x = float.Parse(split[0], CultureInfo.InvariantCulture);
+            var y = float.Parse(split[1], CultureInfo.InvariantCulture);
             return new Vector2(x, y);
         }
 

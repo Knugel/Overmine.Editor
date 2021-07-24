@@ -136,6 +136,24 @@ namespace Editor
             EditorUtility.FocusProjectWindow();
             Selection.activeObject = asset;
         }
+        
+        [MenuItem("Assets/Create/References/Popup", false, 0)]
+        public static void CreatePopupReference()
+        {
+            var asset = new GameObject();
+            asset.AddComponent<PopupReference>();
+
+            var obj = Selection.activeObject;
+            var path = obj == null ? "Assets" : AssetDatabase.GetAssetPath(obj.GetInstanceID());
+            
+            path = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, "Popup.prefab"));
+            PrefabUtility.SaveAsPrefabAsset(asset, path);
+
+            UnityEngine.Object.DestroyImmediate(asset);
+            
+            EditorUtility.FocusProjectWindow();
+            Selection.activeObject = asset;
+        }
 
         public static void SaveAsset(UnityEngine.Object asset, string file)
         {

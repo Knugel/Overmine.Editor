@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using Newtonsoft.Json.Linq;
@@ -52,7 +53,17 @@ namespace Editor.Serialization
             var position = nData.GetValue("Offset").ToObject<Vector2>(NodeSerializer.Serializer);
 
             var node = view.CreateNode(type, position);
-            node.Data = DeserializeObject(obj, type, data.fieldSerializationData.unityObjects) as Task;
+            node.Data = DeserializeObject(obj, type, view, data.fieldSerializationData.unityObjects) as Task;
+            
+            var name = obj.Value<string>("Name");
+            var id = obj.Value<int>("ID");
+            var instant = obj.Value<bool>("Instant");
+
+            node.Data.FriendlyName = name;
+            node.Data.IsInstant = instant;
+            node.Data.ID = id;
+
+            node.title = node.Data.FriendlyName;
 
             var children = obj.GetValue("Children");
             if (children is JArray array)
@@ -67,7 +78,7 @@ namespace Editor.Serialization
             return node;
         }
 
-        private static object DeserializeObject(JObject obj, Type type, List<UnityEngine.Object> unityObjects)
+        private static object DeserializeObject(JObject obj, Type type, BehaviourGraphView view, List<UnityEngine.Object> unityObjects)
         {
             if(type.IsAbstract)
                 type = TaskUtility.GetTypeWithinAssembly(obj.Value<string>("Type"));
@@ -87,7 +98,7 @@ namespace Editor.Serialization
                 
                 if (jValue is JObject jObj)
                 {
-                    value = DeserializeObject(jObj, field.FieldType, unityObjects);
+                    value = DeserializeObject(jObj, field.FieldType, view, unityObjects);
                     field.SetValue(instance, value);
                 }
                 else if(jValue != null)
@@ -95,7 +106,25 @@ namespace Editor.Serialization
                     if (jValue.Type == JTokenType.Integer && !field.FieldType.IsNumeric() && !field.FieldType.IsEnum)
                     {
                         var idx = jValue.ToObject<int>();
-                        value = unityObjects[idx];
+                        if (idx >= unityObjects.Count)
+                            value = null;
+                        else
+                            value = unityObjects[idx];
+                    }
+                    else if(jValue.Type == JTokenType.Array 
+                            && ((JArray)jValue).All(x => x.Type == JTokenType.Integer) 
+                            && !field.FieldType.IsNumeric() 
+                            && !field.FieldType.IsEnum)
+                    {
+                        var jArray = jValue as JArray;
+                        var array = Array.CreateInstance(field.FieldType.GetElementType(), jArray.Count);
+                        for(var i = 0; i < jArray.Count; i++)
+                        {
+                            var idx = jArray[i].ToObject<int>();
+                            var node = view.nodes.ToList().Cast<TaskNode>().FirstOrDefault(x => x.Data.ID == idx);
+                            array.SetValue(node.Data, i);
+                        }
+                        value = array;
                     }
                     else
                     {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using BehaviorDesigner.Runtime.Tasks;
 using Editor.Serialization;
 using Overmine.API.Assets;
 using UnityEditor;
@@ -92,7 +93,7 @@ namespace Overmine.Editor.Graph
 
         private void UpdateInspectorSelection()
         {
-            _inspectorObject.Selected.Clear();
+            _inspectorObject.Selected = null;
             
             var selected = new HashSet<TaskNode>();
             foreach (var node in selection)
@@ -145,7 +146,7 @@ namespace Overmine.Editor.Graph
             }
             
             graph.NodesData.Clear();
-
+            
             foreach (var node in nodes.ToList().Cast<TaskNode>())
             {
                 graph.NodesData.Add(new NodeData
@@ -156,6 +157,11 @@ namespace Overmine.Editor.Graph
                     Data = node.Data
                 });
             }
+
+            var id = 0;
+            var entry = graph.NodesData.FirstOrDefault(x => x.Type == typeof(EntryTask));
+            if(entry != null)
+                AssignID(entry, ref id);
 
             graph.Variables.Clear();
             
@@ -175,12 +181,24 @@ namespace Overmine.Editor.Graph
             AssetDatabase.SaveAssets();
         }
 
+        private void AssignID(NodeData node, ref int id)
+        {
+            node.Data.ID = id++;
+            foreach(var child in _graph.GetLinked(node))
+                AssignID(child, ref id);
+        }
+
         public void Connect(TaskNode input, TaskNode output)
         {
             var edge = new Edge {input = input.Input, output = output.Output };
             edge.input.Connect(edge);
             edge.output.Connect(edge);
             AddElement(edge);
+        }
+
+        public IEnumerable<TaskNode> GetNodesOfType(Type type)
+        {
+            return nodes.ToList().Cast<TaskNode>().Where(x => x.Type.IsAssignableFrom(type));
         }
 
         public void Load(BehaviourGraph graph)

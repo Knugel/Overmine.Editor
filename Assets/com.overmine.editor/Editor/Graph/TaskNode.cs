@@ -37,6 +37,7 @@ namespace Overmine.Editor.Graph
             
             Type = type;
             Data = Activator.CreateInstance(Type) as Task;
+            Data.FriendlyName = title;
             
             InitView();
         }
