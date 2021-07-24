@@ -87,6 +87,11 @@ namespace Editor
             {
                 Name = "Link",
                 Type = typeof(SharedEntity)
+            },
+            new Variable
+            {
+                Name = "Target",
+                Type = typeof(SharedEntity)
             }
         };
         

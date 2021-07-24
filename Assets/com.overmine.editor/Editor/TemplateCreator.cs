@@ -13,6 +13,12 @@ namespace Editor
             Copy<ItemData>("Resources/Templates/Relic.asset", "Relic.asset");
         }
         
+        [MenuItem("Assets/Create/Templates/Blessing", false, 0)]
+        public static void CreateBlessingTemplate()
+        {
+            Copy<ItemData>("Resources/Templates/Blessing.asset", "Blessing.asset");
+        }
+        
         [MenuItem("Assets/Create/Templates/Hex", false, 0)]
         public static void CreateHexTemplate()
         {
