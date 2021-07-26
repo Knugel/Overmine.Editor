@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1039079324, guid: 1c8ec480ccbe12447bb0a78c5e04958b, type: 3}
-  m_Name: Major Curse
+  m_Name: Hex
   m_EditorClassIdentifier: 
-  m_guid: 1edeebc9-7ee3-4769-abb0-d29b50fb76ca
+  m_guid: fbbcbcdb-38cc-4430-a648-e7216d696c85
   m_icon: {fileID: 0}
   m_portrait: {fileID: 0}
   m_displayName:
@@ -51,8 +51,8 @@ MonoBehaviour:
   m_rarity: 0
   m_showInJournal: 1
   m_isDeprecated: 0
-  m_hint: 41943040
-  m_slot: curse
+  m_hint: 16777216
+  m_slot: hex
   m_audio: event:/Items/Item_Land
   m_tags: []
   m_costGroups:
@@ -62,13 +62,13 @@ MonoBehaviour:
       mData: {fileID: 11400000, guid: 5c763899bb7eec34896bb32965c6e330, type: 2}
   m_maxDropCount: 1
   m_isDefault: 1
-  m_isDefaultDiscovered: 0
+  m_isDefaultDiscovered: 1
   m_autoUnlock: 0
   m_rerollable: 0
   m_allowOnAltar: 0
   m_pickedUpBehavior: {fileID: 0}
   m_secondaryPickedUpBehavior: {fileID: 0}
-  m_isSpecialDrop: 0
+  m_isSpecialDrop: 1
   m_isSpecialDiscovery: 0
   m_comboPiece: {fileID: 0}
   m_comboResult: {fileID: 0}

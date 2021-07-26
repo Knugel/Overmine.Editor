@@ -1,11 +1,6 @@
-﻿using System.Linq;
-using System.Reflection;
-using Overmine.API;
+﻿using Overmine.API;
 using Overmine.API.Events;
 using Overmine.API.Extensions;
-using Thor;
-using TMPro;
-using UnityEngine;
 
 public class ExampleMod : Mod
 {
@@ -19,6 +14,7 @@ public class ExampleMod : Mod
     
     private void OnSetup(SetupEvent.Post ev)
     {
+        Resources.ResolveReferences();
         ev.Instance.RegisterAll(Resources);
     }
 }

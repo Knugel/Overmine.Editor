@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4445845427639500579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5122808420977737328}
+  - component: {fileID: -620136797749313710}
+  - component: {fileID: -2634295494075883852}
+  - component: {fileID: 4634437910923532438}
+  - component: {fileID: -823423372535251383}
+  - component: {fileID: -2501864289385498343}
+  m_Layer: 0
+  m_Name: Potion Drink
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5122808420977737328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4445845427639500579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-620136797749313710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4445845427639500579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 544464033, guid: 1c8ec480ccbe12447bb0a78c5e04958b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_data: {fileID: 0}
+  m_guid: 352f9ec2aba5440291bf20fa9054e700
+  m_constrain: 0
+  m_filterable: 0
+  m_persistent: 1
+  m_inheritTeam: 1
+  m_initialTags:
+  - m_value: potion
+  m_team: 2
+  m_agentTypeID: 0
+  m_initPhase: 0
+  m_sortingType: 0
+  m_doorBlocker: 0
+  m_userData: 0
+  m_userString: 
+  m_popupOffsets: []
+--- !u!114 &-2634295494075883852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4445845427639500579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1438000191, guid: 1c8ec480ccbe12447bb0a78c5e04958b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_behaviors:
+  - {fileID: 11400000, guid: be65e6ad5fc54af4b89e2662cc784bb1, type: 2}
+  - {fileID: 11400000, guid: ed3e622bf97a6164cb8f13d998fe6b2d, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 8dedf698202b57246bbf05f461ab5f1e, type: 2}
+  - {fileID: 11400000, guid: 3d1e9ed5358480e4199f3c712601a1b8, type: 2}
+  - {fileID: 11400000, guid: 5ab101fb31f9d4f4e83ab7b33993959a, type: 2}
+  - {fileID: 11400000, guid: 230815e468990b44fa4e6501f8246418, type: 2}
+  m_type: 0
+  m_activationStage: 1
+  m_chargeDuration: 1
+  m_castDuration: 0
+  m_channelDuration: 0
+  m_cooldownDuration: 0
+  m_maxChargeLevel: 1
+  m_minChargeLevelToCast: 1
+  m_castingManaCost: 1
+  m_channelingManaCost: 0
+  m_castingStaminaCost: 0
+  m_channelingStaminaCost: 0
+  m_castOnMaxCharge: 1
+  m_userDataFormat: 
+  m_failAudio: 
+--- !u!114 &4634437910923532438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4445845427639500579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -552951886, guid: 1c8ec480ccbe12447bb0a78c5e04958b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWhenEnabled: 0
+  asynchronousLoad: 0
+  pauseWhenDisabled: 0
+  restartWhenComplete: 1
+  logTaskChanges: 0
+  group: 0
+  resetValuesOnRestart: 0
+  externalBehavior: {fileID: 11400000, guid: 1d5cccb4cc5956745a9f0f696ae7fd38, type: 2}
+  mBehaviorSource:
+    behaviorName: AbilityController
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: 
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects: []
+        byteData: 
+        byteDataArray: 
+      Version: 
+  m_preProcess: 0
+  m_interruptable: 0
+--- !u!114 &-823423372535251383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4445845427639500579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2114942042, guid: 1c8ec480ccbe12447bb0a78c5e04958b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_attackSpeed: 1
+  m_attackRange: 1
+  m_throwSpeed: 1
+  m_throwRange: 1
+  m_throwSize: 1
+  m_throwPierces: 0
+  m_bombSize:
+    value: 1
+    min: 0
+    max: 5
+  m_critChance: 0
+  m_critMultiplier: 1
+  m_damageMultiplier: 1
+  m_damage: []
+  m_damageAmp: []
+--- !u!114 &-2501864289385498343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4445845427639500579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1058728248, guid: 421ae4f72b4255642983b93487241616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

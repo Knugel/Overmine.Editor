@@ -83,4 +83,5 @@ MonoBehaviour:
   m_forceNoSave: 0
   m_userDataFormat: 
   m_levelFormat: '{0}'
-  m_behaviors: []
+  m_behaviors:
+  - {fileID: 11400000, guid: 30b7b273c7dabea48ac7c322ad5b7a53, type: 2}

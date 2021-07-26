@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1226414609, guid: 421ae4f72b4255642983b93487241616, type: 3}
+  m_Name: Potion Pickup
+  m_EditorClassIdentifier: 
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: "{\r\n  \"EntryTask\": {\r\n    \"Type\": \"BehaviorDesigner.Runtime.Tasks.EntryTask\",\r\n   
+        \"ID\": 0,\r\n    \"Name\": \"Entry Task\",\r\n    \"Instant\": true,\r\n   
+        \"NodeData\": {\r\n      \"Offset\": \"(432,83)\"\r\n    }\r\n  },\r\n  \"RootTask\":
+        {\r\n    \"Type\": \"Thor.EquipPotion\",\r\n    \"ID\": 1,\r\n    \"Name\":
+        \"Equip Potion\",\r\n    \"Instant\": true,\r\n    \"NodeData\": {\r\n     
+        \"Offset\": \"(424,146)\"\r\n    },\r\n    \"SharedEntitym_target\": {\r\n     
+        \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": \"Target\",\r\n     
+        \"IsShared\": true\r\n    },\r\n    \"SharedEntitym_source\": {\r\n     
+        \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": \"Self\",\r\n      \"IsShared\":
+        true\r\n    },\r\n    \"EquipmentExtm_equipment\": 0\r\n  },\r\n  \"Variables\":
+        [\r\n    {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": \"Self\",\r\n     
+        \"IsShared\": true\r\n    },\r\n    {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n     
+        \"Name\": \"Owner\",\r\n      \"IsShared\": true\r\n    },\r\n    {\r\n     
+        \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": \"Root\",\r\n      \"IsShared\":
+        true\r\n    },\r\n    {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n     
+        \"Name\": \"Link\",\r\n      \"IsShared\": true\r\n    },\r\n    {\r\n     
+        \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": \"Target\",\r\n     
+        \"IsShared\": true\r\n    }\r\n  ]\r\n}"
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects:
+        - {fileID: 8374139821709035278, guid: bae8b04c775f05e44854212eba0cb69b, type: 3}
+        byteData: 
+        byteDataArray: 
+      Version: 1.5.7
+  m_preProcess: 0
+  m_autoStart: 1
+  m_restartWhenComplete: 1
+  m_pauseWhenDisabled: 0
+  m_interruptable: 0
+  Variables:
+  - Name: Entities
+    IsGlobal: 1
+    _type: Thor.SharedEntityList, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Avatars
+    IsGlobal: 1
+    _type: Thor.SharedEntityList, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Items
+    IsGlobal: 1
+    _type: Thor.SharedEntityList, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Projectiles
+    IsGlobal: 1
+    _type: Thor.SharedEntityList, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Bosses
+    IsGlobal: 1
+    _type: Thor.SharedEntityList, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Hazards
+    IsGlobal: 1
+    _type: Thor.SharedEntityList, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Player
+    IsGlobal: 1
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Zone
+    IsGlobal: 1
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Seed
+    IsGlobal: 1
+    _type: BehaviorDesigner.Runtime.SharedInt, BehaviorDesigner, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - Name: Self
+    IsGlobal: 0
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Owner
+    IsGlobal: 0
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Root
+    IsGlobal: 0
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Link
+    IsGlobal: 0
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Target
+    IsGlobal: 0
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

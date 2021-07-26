@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1039079324, guid: 1c8ec480ccbe12447bb0a78c5e04958b, type: 3}
-  m_Name: Minor Curse
+  m_Name: Relic
   m_EditorClassIdentifier: 
-  m_guid: 4c1838fd-990b-46b3-8d10-307adab09ce0
+  m_guid: 141a22f9-f9f1-4e3d-9e88-2b20b2fe77eb
   m_icon: {fileID: 0}
   m_portrait: {fileID: 0}
   m_displayName:
@@ -51,21 +51,21 @@ MonoBehaviour:
   m_rarity: 0
   m_showInJournal: 1
   m_isDeprecated: 0
-  m_hint: 142606336
-  m_slot: minor_curse
+  m_hint: 16777216
+  m_slot: relic
   m_audio: event:/Items/Item_Land
   m_tags: []
   m_costGroups:
   - type: 1
     costs:
-    - mAmount: 0
-      mData: {fileID: 11400000, guid: 5c763899bb7eec34896bb32965c6e330, type: 2}
-  - type: 3
+    - mAmount: 1
+      mData: {fileID: 11400000, guid: a2d0cd9891e22c849bfca92c7196dd4f, type: 2}
+  - type: 2
     costs:
     - mAmount: 1
-      mData: {fileID: 11400000, guid: 7615518ac0175924b8bf500da36f54f5, type: 2}
-  m_maxDropCount: -1
-  m_isDefault: 1
+      mData: {fileID: 11400000, guid: a2d0cd9891e22c849bfca92c7196dd4f, type: 2}
+  m_maxDropCount: 1
+  m_isDefault: 0
   m_isDefaultDiscovered: 0
   m_autoUnlock: 0
   m_rerollable: 1

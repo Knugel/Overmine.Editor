@@ -275,6 +275,13 @@ namespace Editor.Serialization
                 type = type.GetElementType();
             return typeof(Task).IsAssignableFrom(type);
         }
+        
+        public static object CreateTypeInstance(Type type)
+        {
+            if (type.IsArray)
+                return Array.CreateInstance(type.GetElementType(), 0);
+            return Activator.CreateInstance(type);
+        }
 
         private static bool IsSerializedField(FieldInfo info)
         {

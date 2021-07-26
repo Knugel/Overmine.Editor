@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1818083789, guid: 421ae4f72b4255642983b93487241616, type: 3}
+  m_Name: Potions Used
+  m_EditorClassIdentifier: 
+  m_guid: 673fdf117787440fab20fe151ffc8826
+  m_min: 0
+  m_upgrade: 
+  m_milestones: []

@@ -87,7 +87,7 @@ namespace Overmine.Editor.Graph
                 {
                     if (fInfo.FieldType.IsSerializable && !fInfo.FieldType.IsAbstract && !fInfo.FieldType.Namespace.StartsWith("System"))
                     {
-                        var target= fInfo.GetValue(obj) ?? CreateTypeInstance(fInfo.FieldType);
+                        var target= fInfo.GetValue(obj) ?? NodeSerializer.CreateTypeInstance(fInfo.FieldType);
                         fInfo.SetValue(obj, target);
 
                         var name = $"unity-foldout-Selected.Data.{fInfo.Name}";
@@ -229,13 +229,6 @@ namespace Overmine.Editor.Graph
                 ?.GetType(typeName);
         }
 
-        private static object CreateTypeInstance(Type type)
-        {
-            if (type.IsArray)
-                return Array.CreateInstance(type.GetElementType(), 0);
-            return Activator.CreateInstance(type);
-        }
-        
         private TooltipAttribute GetTooltipAttribute(SerializedProperty prop, bool inherit) {
             if (prop == null) { return null; }
             

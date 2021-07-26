@@ -82,7 +82,7 @@ namespace Editor.Serialization
         {
             if(type.IsAbstract)
                 type = TaskUtility.GetTypeWithinAssembly(obj.Value<string>("Type"));
-            var instance = Activator.CreateInstance(type);
+            var instance = NodeSerializer.CreateTypeInstance(type);
             
             foreach (var field in NodeSerializer.GetSerializedFields(type))
             {
