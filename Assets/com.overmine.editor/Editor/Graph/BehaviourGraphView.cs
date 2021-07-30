@@ -245,8 +245,8 @@ namespace Overmine.Editor.Graph
 
         public void Disconnect(Edge edge)
         {
-            edge.input.DisconnectAll();
-            edge.output.DisconnectAll();
+            edge.input.Disconnect(edge);
+            edge.output.Disconnect(edge);
             RemoveElement(edge);
         }
 
