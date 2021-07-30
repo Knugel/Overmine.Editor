@@ -21,10 +21,11 @@
     padding: 4px;
 }
 
-VariablePopup .unity-base-field__input {
-    margin-right: -15px;
+.unity-base-field__label {
+    min-width: 130px !important;
+    margin-right: 0;
 }
 
-Foldout PropertyField VariablePopup PopupField .unity-label {
-    margin-right: -15px;
+.unity-foldout .unity-vector3-field__input .unity-base-field__label  {
+    min-width: 11px !important;
 }
