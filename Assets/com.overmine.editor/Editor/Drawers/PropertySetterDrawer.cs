@@ -18,7 +18,7 @@ namespace Editor.Drawers
             "+=",
             "-=",
             "*=",
-            "/="
+            "\u2044="
         };
         
         protected override VisualElement Repaint(SerializedProperty property)

@@ -49,12 +49,12 @@ namespace Editor.Drawers
             if(isRhsDynamic)
                 container.Add(CreatePropertyPopup(property.FindPropertyRelative("rhsMemberName"), rhsType.stringValue));
             
+            container.Add(CreateOperatorPopup(property.FindPropertyRelative("comparisonName"), Comparisons));
+            
             if(!isLhsDynamic)
                 container.Add(CreatePropertyField(property.FindPropertyRelative("lhsValue")));
             if(!isRhsDynamic)
                 container.Add(CreatePropertyField(property.FindPropertyRelative("rhsValue")));
-            
-            container.Add(CreateOperatorPopup(property.FindPropertyRelative("comparisonName"), Comparisons));
 
             return container;
         }

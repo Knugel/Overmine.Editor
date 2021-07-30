@@ -87,15 +87,27 @@ namespace Editor.Drawers
 
         protected VisualElement CreateOperatorPopup(SerializedProperty property, List<string> operators)
         {
-            var popup = new PopupField<string>(operators, string.IsNullOrEmpty(property.stringValue) ? operators.First() : property.stringValue);
+            var value = string.IsNullOrEmpty(property.stringValue) ? operators.First() : property.stringValue;
+
+            var popup = new PopupField<string>(operators, SlashToUnicode(value));
             popup.label = property.displayName;
             popup.RegisterValueChangedCallback(ev =>
             {
-                property.stringValue = ev.newValue;
+                property.stringValue = SlashFromUnicode(ev.newValue);
                 property.serializedObject.ApplyModifiedProperties();
                 property.serializedObject.Update();
             });
             return popup;
+        }
+
+        private string SlashToUnicode(string source)
+        {
+            return source.Replace('/', '\u2044');
+        }
+
+        private string SlashFromUnicode(string source)
+        {
+            return source.Replace('\u2044', '/');
         }
         
         private static List<string> FindTypes()
