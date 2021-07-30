@@ -45,7 +45,11 @@ namespace Editor.Drawers
         
         protected VisualElement CreateTypePopup(SerializedProperty property)
         {
-            var popup = new PopupField<string>(Types, string.IsNullOrEmpty(property.stringValue) ? "None" : property.stringValue);
+            var value = string.IsNullOrEmpty(property.stringValue) ? "None" : property.stringValue;
+            if (!Types.Contains(value))
+                value = "None";
+            
+            var popup = new PopupField<string>(Types, value);
             popup.label = property.displayName;
             popup.RegisterValueChangedCallback(ev =>
             {
