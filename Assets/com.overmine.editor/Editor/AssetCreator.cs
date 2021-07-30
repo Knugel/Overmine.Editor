@@ -111,14 +111,30 @@ namespace Editor
             SaveAsset(asset, "Behavior Graph.asset");
         }
         
-        [MenuItem("Assets/Create/Data/Grid Data", false, 0)]
-        public static void CreateGridData()
+        [MenuItem("Assets/Create/Data/Familiar Data", false, 0)]
+        public static void CreateFamiliarData()
         {
-            var asset = ScriptableObject.CreateInstance<GridData>();
+            var asset = ScriptableObject.CreateInstance<FamiliarData>();
             GenerateGuid(asset);
-            SaveAsset(asset, "Grid Data.asset");
+            SaveAsset(asset, "Familiar.asset");
         }
         
+        [MenuItem("Assets/Create/Data/Familiar Skin Data", false, 0)]
+        public static void CreateFamiliarSkinData()
+        {
+            var asset = ScriptableObject.CreateInstance<FamiliarSkinData>();
+            GenerateGuid(asset);
+            SaveAsset(asset, "Familiar Skin.asset");
+        }
+        
+        [MenuItem("Assets/Create/Data/Full Animation Data", false, 0)]
+        public static void CreateFullAnimationData()
+        {
+            var asset = ScriptableObject.CreateInstance<FullAnimationData>();
+            GenerateGuid(asset);
+            SaveAsset(asset, "Full Animation Data.asset");
+        }
+
         [MenuItem("Assets/Create/References/Entity", false, 0)]
         public static void CreateEntityReference()
         {
@@ -165,6 +181,24 @@ namespace Editor
             var path = obj == null ? "Assets" : AssetDatabase.GetAssetPath(obj.GetInstanceID());
             
             path = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, "Decorator.prefab"));
+            PrefabUtility.SaveAsPrefabAsset(asset, path);
+
+            UnityEngine.Object.DestroyImmediate(asset);
+            
+            EditorUtility.FocusProjectWindow();
+            Selection.activeObject = asset;
+        }
+        
+        [MenuItem("Assets/Create/References/Behavior Container", false, 0)]
+        public static void CreateBehaviorContainerReference()
+        {
+            var asset = new GameObject();
+            asset.AddComponent<BehaviorContainerReference>();
+
+            var obj = Selection.activeObject;
+            var path = obj == null ? "Assets" : AssetDatabase.GetAssetPath(obj.GetInstanceID());
+            
+            path = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, "Behavior Container.prefab"));
             PrefabUtility.SaveAsPrefabAsset(asset, path);
 
             UnityEngine.Object.DestroyImmediate(asset);

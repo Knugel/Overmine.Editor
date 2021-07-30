@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,7 +26,8 @@ namespace Editor.Serialization
             typeof(Color),
             typeof(Vector2),
             typeof(Vector3),
-            typeof(SharedVariable)
+            typeof(SharedVariable),
+            typeof(IList)
         };
         
         static NodeSerializer()

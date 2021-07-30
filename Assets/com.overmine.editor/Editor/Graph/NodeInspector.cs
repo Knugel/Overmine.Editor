@@ -40,6 +40,12 @@ namespace Overmine.Editor.Graph
             _root.Clear();
             serializedObject.Update();
 
+            if (_inspectorObject.Selected?.GUID == null)
+            {
+                Repaint();
+                return;
+            }
+
             var iterator = serializedObject.FindProperty("Selected");
             if (iterator == null)
                 return;
@@ -71,6 +77,8 @@ namespace Overmine.Editor.Graph
             CreateSharedVariableUI(elementType, _inspectorObject.Selected.Data, container);
 
             _root.Add(container);
+            
+            Repaint();
         }
 
         private void CreateSharedVariableUI(Type type, object obj, VisualElement container)
@@ -178,6 +186,8 @@ namespace Overmine.Editor.Graph
                 
                 container.Add(size);
 
+                var listView = CreateTaskListView(tasks, existing);
+                
                 size.RegisterValueChangedCallback(ev =>
                 {
                     var value = ev.newValue;
@@ -194,30 +204,39 @@ namespace Overmine.Editor.Graph
                         Array.Copy(existing, array, Math.Min(existing.Length, array.Length));
                     
                     fInfo.SetValue(obj, array);
-                    container.MarkDirtyRepaint();
-                });
-                
-                tasks.Insert(0, null);
-                Func<VisualElement> makeItem = () => new PopupField<TaskNode>("", tasks, 0, node => node?.title ?? "None", node => node?.title ?? "None");
-                Action<VisualElement, int> bindItem = (e, i) =>
-                {
-                    var popup = e as PopupField<TaskNode>;
-                    popup.RegisterValueChangedCallback(ev =>
-                    {
-                        existing.SetValue(ev.newValue?.Data, i);
-                    });
                     
-                    var item = existing.GetValue(i);
-                    var node = tasks.FirstOrDefault(x => x?.Data == item);
-                    popup.SetValueWithoutNotify(node);
-                };
+                    listView.RemoveFromHierarchy();
+                    listView = CreateTaskListView(tasks, array);
+                    container.Add(listView);
+                    container.MarkDirtyRepaint();
+                    
+                    Repaint();
+                });
 
-                var listView = new ListView(existing, 19, makeItem, bindItem);
-                
-                listView.style.height = Math.Min(19 * existing.Length, 75);
-                
                 container.Add(listView);
             }
+        }
+
+        private VisualElement CreateTaskListView(List<TaskNode> tasks, Array existing)
+        {
+            tasks.Insert(0, null);
+            Func<VisualElement> makeItem = () => new PopupField<TaskNode>("", tasks, 0, node => node?.title ?? "None", node => node?.title ?? "None");
+            Action<VisualElement, int> bindItem = (e, i) =>
+            {
+                var popup = e as PopupField<TaskNode>;
+                popup.RegisterValueChangedCallback(ev =>
+                {
+                    existing.SetValue(ev.newValue?.Data, i);
+                });
+                    
+                var item = existing.GetValue(i);
+                var node = tasks.FirstOrDefault(x => x?.Data == item);
+                popup.SetValueWithoutNotify(node);
+            };
+
+            var listView = new ListView(existing, 19, makeItem, bindItem);
+            listView.style.height = Math.Min(19 * existing.Length, 75);
+            return listView;
         }
 
         private Type GetType(string fullName)

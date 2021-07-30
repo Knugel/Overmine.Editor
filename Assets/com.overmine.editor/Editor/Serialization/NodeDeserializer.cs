@@ -111,8 +111,9 @@ namespace Editor.Serialization
                         else
                             value = unityObjects[idx];
                     }
-                    else if(jValue.Type == JTokenType.Array 
-                            && ((JArray)jValue).All(x => x.Type == JTokenType.Integer) 
+                    else if(jValue.Type == JTokenType.Array
+                            && ((JArray)jValue).Any()
+                            && ((JArray)jValue).All(x => x.Type == JTokenType.Integer)
                             && !field.FieldType.IsNumeric() 
                             && !field.FieldType.IsEnum)
                     {

@@ -31,6 +31,8 @@ namespace Overmine.Editor.Graph
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
             this.AddManipulator(new FreehandSelector());
+            
+            graphViewChanged = OnGraphViewChanged;
 
             _graph = graph;
             
@@ -54,6 +56,41 @@ namespace Overmine.Editor.Graph
             Insert(0, new GridBackground());
         }
 
+        private GraphViewChange OnGraphViewChanged(GraphViewChange changes)
+        {
+            if (changes.elementsToRemove == null)
+                return changes;
+            
+            changes.elementsToRemove.Sort((e1, e2) => {
+                int GetPriority(GraphElement e)
+                {
+                    return e is TaskNode ? 0 : 1;
+                }
+                return GetPriority(e1).CompareTo(GetPriority(e2));
+            });
+            
+            changes.elementsToRemove.RemoveAll(e =>
+            {
+                switch (e)
+                {
+                    case Edge edge:
+                        Disconnect(edge);
+                        return true;
+                    case TaskNode node:
+                        foreach(var edge in node.Input?.connections?.ToList() ?? Enumerable.Empty<Edge>())
+                            Disconnect(edge);
+                        foreach(var edge in node.Output?.connections?.ToList() ?? Enumerable.Empty<Edge>())
+                            Disconnect(edge);
+                        return false;
+                    case BlackboardField field:
+                        Properties.RemoveAll(x => x.Name == field.text);
+                        return false;
+                }
+                return false;
+            });
+            return changes;
+        }
+
         private void OnKeyDown(KeyDownEvent evt)
         {
             if(evt.ctrlKey && evt.keyCode == KeyCode.S)
@@ -64,6 +101,8 @@ namespace Overmine.Editor.Graph
         {
             if (IsNodeSelected())
                 UpdateInspectorSelection();
+            else
+                ClearInspectorSelection();
         }
 
         private void OnMouseUp(MouseUpEvent evt)
@@ -72,6 +111,8 @@ namespace Overmine.Editor.Graph
             {
                 if (IsNodeSelected())
                     UpdateInspectorSelection();
+                else
+                    ClearInspectorSelection();
             }).ExecuteLater(1);
         }
 
@@ -107,6 +148,12 @@ namespace Overmine.Editor.Graph
                 _inspectorObject.UpdateSelection(selected);
                 Selection.activeObject = _inspectorObject;
             }
+        }
+
+        private void ClearInspectorSelection()
+        {
+            _inspectorObject.UpdateSelection(Enumerable.Empty<TaskNode>());
+            Selection.activeObject = null;
         }
 
         private bool IsNodeSelected() => selection.Any(x => x is TaskNode);
@@ -194,6 +241,13 @@ namespace Overmine.Editor.Graph
             edge.input.Connect(edge);
             edge.output.Connect(edge);
             AddElement(edge);
+        }
+
+        public void Disconnect(Edge edge)
+        {
+            edge.input.DisconnectAll();
+            edge.output.DisconnectAll();
+            RemoveElement(edge);
         }
 
         public IEnumerable<TaskNode> GetNodesOfType(Type type)

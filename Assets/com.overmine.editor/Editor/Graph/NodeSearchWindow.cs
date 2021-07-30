@@ -65,8 +65,10 @@ namespace Overmine.Editor.Graph
 
         public bool OnSelectEntry(SearchTreeEntry entry, SearchWindowContext context)
         {
-            var position = _window.rootVisualElement.ChangeCoordinatesTo(_window.rootVisualElement.parent,
-                context.screenMousePosition - _window.position.position);
+            var windowRoot = _window.rootVisualElement;
+            var windowMousePosition = windowRoot.ChangeCoordinatesTo(windowRoot.parent, context.screenMousePosition - _window.position.position);
+            var position = _graphView.contentViewContainer.WorldToLocal(windowMousePosition);
+            
             _graphView.CreateNode(entry.userData as Type, position);
             return true;
         }
