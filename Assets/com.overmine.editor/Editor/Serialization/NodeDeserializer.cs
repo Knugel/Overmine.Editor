@@ -53,17 +53,17 @@ namespace Editor.Serialization
             var position = nData.GetValue("Offset").ToObject<Vector2>(NodeSerializer.Serializer);
 
             var node = view.CreateNode(type, position);
-            node.Data = DeserializeObject(obj, type, view, data.fieldSerializationData.unityObjects) as Task;
-            
+                        
             var name = obj.Value<string>("Name");
             var id = obj.Value<int>("ID");
             var instant = obj.Value<bool>("Instant");
 
+            node.title = name;
+            
+            node.Data = DeserializeObject(obj, type, view, data.fieldSerializationData.unityObjects, node) as Task;
             node.Data.FriendlyName = name;
             node.Data.IsInstant = instant;
             node.Data.ID = id;
-
-            node.title = node.Data.FriendlyName;
 
             var children = obj.GetValue("Children");
             if (children is JArray array)
@@ -78,64 +78,76 @@ namespace Editor.Serialization
             return node;
         }
 
-        private static object DeserializeObject(JObject obj, Type type, BehaviourGraphView view, List<UnityEngine.Object> unityObjects)
+        private static object DeserializeObject(JObject obj, Type type, BehaviourGraphView view, List<UnityEngine.Object> unityObjects, TaskNode node)
         {
-            if(type.IsAbstract)
-                type = TaskUtility.GetTypeWithinAssembly(obj.Value<string>("Type"));
-            var instance = NodeSerializer.CreateTypeInstance(type);
-            
-            foreach (var field in NodeSerializer.GetSerializedFields(type))
+            try
             {
-                var fName = field.FieldType.Name + field.Name;
-                if (typeof(SharedVariable).IsAssignableFrom(type) && field.Name != "mValue")
-                {
-                    fName = field.Name.Substring(1);
-                    fName = char.ToUpper(fName[0]) + fName.Substring(1);
-                }
-                
-                var jValue = obj.GetValue(fName);
-                object value;
-                
-                if (jValue is JObject jObj)
-                {
-                    value = DeserializeObject(jObj, field.FieldType, view, unityObjects);
-                    field.SetValue(instance, value);
-                }
-                else if(jValue != null)
-                {
-                    if (jValue.Type == JTokenType.Integer && !field.FieldType.IsNumeric() && !field.FieldType.IsEnum)
-                    {
-                        var idx = jValue.ToObject<int>();
-                        if (idx >= unityObjects.Count)
-                            value = null;
-                        else
-                            value = unityObjects[idx];
-                    }
-                    else if(jValue.Type == JTokenType.Array
-                            && ((JArray)jValue).Any()
-                            && ((JArray)jValue).All(x => x.Type == JTokenType.Integer)
-                            && !field.FieldType.IsNumeric() 
-                            && !field.FieldType.IsEnum)
-                    {
-                        var jArray = jValue as JArray;
-                        var array = Array.CreateInstance(field.FieldType.GetElementType(), jArray.Count);
-                        for(var i = 0; i < jArray.Count; i++)
-                        {
-                            var idx = jArray[i].ToObject<int>();
-                            var node = view.nodes.ToList().Cast<TaskNode>().FirstOrDefault(x => x.Data.ID == idx);
-                            array.SetValue(node.Data, i);
-                        }
-                        value = array;
-                    }
-                    else
-                    {
-                        value = jValue.ToObject(field.FieldType, NodeSerializer.Serializer);
-                    }
-                    field.SetValue(instance, value);
-                }
-            }
+                if (type.IsAbstract)
+                    type = TaskUtility.GetTypeWithinAssembly(obj.Value<string>("Type"));
+                var instance = NodeSerializer.CreateTypeInstance(type);
 
-            return instance;
+                foreach (var field in NodeSerializer.GetSerializedFields(type))
+                {
+                    var fName = field.FieldType.Name + field.Name;
+                    if (typeof(SharedVariable).IsAssignableFrom(type) && field.Name != "mValue")
+                    {
+                        fName = field.Name.Substring(1);
+                        fName = char.ToUpper(fName[0]) + fName.Substring(1);
+                    }
+
+                    var jValue = obj.GetValue(fName);
+                    object value;
+
+                    if (jValue is JObject jObj)
+                    {
+                        value = DeserializeObject(jObj, field.FieldType, view, unityObjects, node);
+                        field.SetValue(instance, value);
+                    }
+                    else if (jValue != null)
+                    {
+                        if (jValue.Type == JTokenType.Integer && !field.FieldType.IsNumeric() &&
+                            !field.FieldType.IsEnum)
+                        {
+                            var idx = jValue.ToObject<int>();
+                            if (idx >= unityObjects.Count)
+                                value = null;
+                            else
+                                value = unityObjects[idx];
+                        }
+                        else if (jValue.Type == JTokenType.Array
+                                 && ((JArray) jValue).Any()
+                                 && ((JArray) jValue).All(x => x.Type == JTokenType.Integer)
+                                 && !field.FieldType.IsNumeric()
+                                 && !field.FieldType.IsEnum)
+                        {
+                            var jArray = jValue as JArray;
+                            var array = Array.CreateInstance(field.FieldType.GetElementType(), jArray.Count);
+                            for (var i = 0; i < jArray.Count; i++)
+                            {
+                                var idx = jArray[i].ToObject<int>();
+                                var reference = view.nodes.ToList().Cast<TaskNode>().FirstOrDefault(x => x.Data.ID == idx);
+                                array.SetValue(reference.Data, i);
+                            }
+
+                            value = array;
+                        }
+                        else
+                        {
+                            value = jValue.ToObject(field.FieldType, NodeSerializer.Serializer);
+                        }
+
+                        field.SetValue(instance, value);
+                    }
+                }
+
+                return instance;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error while trying to deserialize object. Node: '{node.title}', JSON: {obj}, Type: {type.FullName}");
+                Debug.LogError(e);
+                return null;
+            }
         }
     }
 }
