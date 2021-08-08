@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1226414609, guid: 421ae4f72b4255642983b93487241616, type: 3}
+  m_Name: Gain XP
+  m_EditorClassIdentifier: 
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: "{\r\n  \"EntryTask\": {\r\n    \"Type\": \"BehaviorDesigner.Runtime.Tasks.EntryTask\",\r\n   
+        \"ID\": 0,\r\n    \"Name\": \"Entry\",\r\n    \"Instant\": true,\r\n    \"NodeData\":
+        {\r\n      \"Offset\": \"(0,0)\"\r\n    }\r\n  },\r\n  \"RootTask\": {\r\n   
+        \"Type\": \"Thor.WaitForGainsResourceEvent\",\r\n    \"ID\": 1,\r\n    \"Name\":
+        \"Wait For Gains Resource Event\",\r\n    \"Instant\": true,\r\n    \"NodeData\":
+        {\r\n      \"Offset\": \"(-115,70)\"\r\n    },\r\n    \"ResourceDatam_resource\":
+        0,\r\n    \"SharedIntm_amountOutput\": {\r\n      \"Type\": \"BehaviorDesigner.Runtime.SharedInt\",\r\n     
+        \"Name\": \"Amount\",\r\n      \"IsShared\": true\r\n    },\r\n    \"SharedEntitym_sourceOutput\":
+        {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": null\r\n   
+        },\r\n    \"SharedEntitym_target\": {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n     
+        \"Name\": \"Owner\",\r\n      \"IsShared\": true\r\n    },\r\n    \"SharedBoolm_endOnFailure\":
+        {\r\n      \"Type\": \"BehaviorDesigner.Runtime.SharedBool\",\r\n      \"Name\":
+        null,\r\n      \"BooleanmValue\": false\r\n    },\r\n    \"SharedFloatm_timeout\":
+        {\r\n      \"Type\": \"BehaviorDesigner.Runtime.SharedFloat\",\r\n      \"Name\":
+        null,\r\n      \"SinglemValue\": 0.0\r\n    },\r\n    \"SharedBoolm_hibernate\":
+        {\r\n      \"Type\": \"BehaviorDesigner.Runtime.SharedBool\",\r\n      \"Name\":
+        null,\r\n      \"BooleanmValue\": false\r\n    },\r\n    \"Children\": [\r\n     
+        {\r\n        \"Type\": \"BehaviorDesigner.Runtime.Tasks.Sequence\",\r\n       
+        \"ID\": 2,\r\n        \"Name\": \"Sequence\",\r\n        \"Instant\": true,\r\n       
+        \"NodeData\": {\r\n          \"Offset\": \"(-20,142)\"\r\n        },\r\n       
+        \"AbortTypeabortType\": \"None\",\r\n        \"Children\": [\r\n         
+        {\r\n            \"Type\": \"Thor.ChangeResource\",\r\n            \"ID\":
+        3,\r\n            \"Name\": \"Change Resource\",\r\n            \"Instant\":
+        true,\r\n            \"NodeData\": {\r\n              \"Offset\": \"(-55,222)\"\r\n           
+        },\r\n            \"SharedEntitym_target\": {\r\n              \"Type\":
+        \"Thor.SharedEntity\",\r\n              \"Name\": \"Self\",\r\n             
+        \"IsShared\": true\r\n            },\r\n            \"ResourceDatam_resource\":
+        1,\r\n            \"SharedIntm_amount\": {\r\n              \"Type\": \"BehaviorDesigner.Runtime.SharedInt\",\r\n             
+        \"Name\": \"Amount\",\r\n              \"IsShared\": true\r\n           
+        },\r\n            \"SharedBoolm_allowPartial\": {\r\n              \"Type\":
+        \"BehaviorDesigner.Runtime.SharedBool\",\r\n              \"Name\": null,\r\n             
+        \"BooleanmValue\": true\r\n            },\r\n            \"SharedBoolm_silent\":
+        {\r\n              \"Type\": \"BehaviorDesigner.Runtime.SharedBool\",\r\n             
+        \"Name\": null,\r\n              \"BooleanmValue\": false\r\n           
+        },\r\n            \"SharedEntitym_source\": {\r\n              \"Type\":
+        \"Thor.SharedEntity\",\r\n              \"Name\": null\r\n            }\r\n         
+        }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"Variables\": [\r\n    {\r\n     
+        \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": \"Self\",\r\n      \"IsShared\":
+        true\r\n    },\r\n    {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n     
+        \"Name\": \"Owner\",\r\n      \"IsShared\": true\r\n    },\r\n    {\r\n     
+        \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": \"Root\",\r\n      \"IsShared\":
+        true\r\n    },\r\n    {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n     
+        \"Name\": \"Link\",\r\n      \"IsShared\": true\r\n    },\r\n    {\r\n     
+        \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": \"Target\",\r\n     
+        \"IsShared\": true\r\n    },\r\n    {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n     
+        \"Name\": \"Iterator\",\r\n      \"IsShared\": true\r\n    },\r\n    {\r\n     
+        \"Type\": \"Thor.SharedEntityList\",\r\n      \"Name\": \"Targets\",\r\n     
+        \"IsShared\": true\r\n    },\r\n    {\r\n      \"Type\": \"BehaviorDesigner.Runtime.SharedInt\",\r\n     
+        \"Name\": \"Amount\",\r\n      \"IsShared\": true\r\n    }\r\n  ]\r\n}"
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects:
+        - {fileID: 11400000, guid: 5c763899bb7eec34896bb32965c6e330, type: 2}
+        - {fileID: 11400000, guid: 5fc8fc0a5ef2c0248a24618b0417008d, type: 2}
+        byteData: 
+        byteDataArray: 
+      Version: 1.5.7
+  m_preProcess: 0
+  m_autoStart: 1
+  m_restartWhenComplete: 1
+  m_pauseWhenDisabled: 0
+  m_interruptable: 0
+  Variables:
+  - Name: Entities
+    IsGlobal: 1
+    _type: Thor.SharedEntityList, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Avatars
+    IsGlobal: 1
+    _type: Thor.SharedEntityList, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Items
+    IsGlobal: 1
+    _type: Thor.SharedEntityList, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Projectiles
+    IsGlobal: 1
+    _type: Thor.SharedEntityList, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Bosses
+    IsGlobal: 1
+    _type: Thor.SharedEntityList, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Hazards
+    IsGlobal: 1
+    _type: Thor.SharedEntityList, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Player
+    IsGlobal: 1
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Zone
+    IsGlobal: 1
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Seed
+    IsGlobal: 1
+    _type: BehaviorDesigner.Runtime.SharedInt, BehaviorDesigner, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - Name: Self
+    IsGlobal: 0
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Owner
+    IsGlobal: 0
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Root
+    IsGlobal: 0
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Link
+    IsGlobal: 0
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Target
+    IsGlobal: 0
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Iterator
+    IsGlobal: 0
+    _type: Thor.SharedEntity, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Targets
+    IsGlobal: 0
+    _type: Thor.SharedEntityList, UnderMine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Name: Amount
+    IsGlobal: 0
+    _type: BehaviorDesigner.Runtime.SharedInt, BehaviorDesigner, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null

@@ -100,12 +100,12 @@ namespace Editor.Drawers
             return popup;
         }
 
-        private string SlashToUnicode(string source)
+        private static string SlashToUnicode(string source)
         {
             return source.Replace('/', '\u2044');
         }
 
-        private string SlashFromUnicode(string source)
+        private static string SlashFromUnicode(string source)
         {
             return source.Replace('\u2044', '/');
         }

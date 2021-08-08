@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -976611119, guid: 1c8ec480ccbe12447bb0a78c5e04958b, type: 3}
+  m_Name: Familiar
+  m_EditorClassIdentifier: 
+  m_guid: 
+  m_icon: {fileID: 0}
+  m_portrait: {fileID: 0}
+  m_displayName:
+    m_id: 0
+    m_text:
+      mIsShared: 0
+      mIsGlobal: 0
+      mIsDynamic: 0
+      mName: 
+      mPropertyMapping: 
+      mPropertyMappingOwner: {fileID: 0}
+      mNetworkSync: 0
+      mValue: Example Familiar
+  m_description:
+    m_id: 0
+    m_text:
+      mIsShared: 0
+      mIsGlobal: 0
+      mIsDynamic: 0
+      mName: 
+      mPropertyMapping: 
+      mPropertyMappingOwner: {fileID: 0}
+      mNetworkSync: 0
+      mValue: Description
+  m_flavor:
+    m_id: 0
+    m_text:
+      mIsShared: 0
+      mIsGlobal: 0
+      mIsDynamic: 0
+      mName: 
+      mPropertyMapping: 
+      mPropertyMappingOwner: {fileID: 0}
+      mNetworkSync: 0
+      mValue: Flavor
+  m_rarity: 0
+  m_showInJournal: 1
+  m_isDeprecated: 0
+  m_hint: 131072
+  m_slot: none
+  m_audio: event:/Items/Item_Land
+  m_tags: []
+  m_costGroups: []
+  m_maxDropCount: -1
+  m_isDefault: 1
+  m_isDefaultDiscovered: 1
+  m_autoUnlock: 0
+  m_rerollable: 0
+  m_allowOnAltar: 1
+  m_pickedUpBehavior: {fileID: 11400000, guid: 8f052854c9aeb024481d96957515756e, type: 2}
+  m_secondaryPickedUpBehavior: {fileID: 0}
+  m_isSpecialDrop: 0
+  m_isSpecialDiscovery: 0
+  m_comboPiece: {fileID: 0}
+  m_comboResult: {fileID: 0}
+  m_userData: 0
+  m_templateOverride: {fileID: 0}
+  m_dropRequirements: []
+  m_discoverRequirements:
+  - type: 0
+    operation: 0
+    key: collector_book
+    value: 2
+    comparison: '>'
+    stringData: 
+    entityData: {fileID: 0}
+    resourceData: {fileID: 0}
+  m_allowInCollectorRoom: 1
+  m_allowInBirthingPod: 1
+  m_skins:
+  - {fileID: 11400000, guid: 191eaaba836b3884683298d1f73a3c09, type: 2}
+  m_fps: 16
+  m_levels: c800000020030000
+  m_animation:
+  - {fileID: 0}
+  m_abilities: []
