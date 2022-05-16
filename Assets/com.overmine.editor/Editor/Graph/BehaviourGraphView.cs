@@ -254,7 +254,7 @@ namespace Overmine.Editor.Graph
 
         public IEnumerable<TaskNode> GetNodesOfType(Type type)
         {
-            return nodes.ToList().Cast<TaskNode>().Where(x => x.Type.IsAssignableFrom(type));
+            return nodes.ToList().Cast<TaskNode>().Where(x => type.IsAssignableFrom(x.Type));
         }
 
         public void Load(BehaviourGraph graph)

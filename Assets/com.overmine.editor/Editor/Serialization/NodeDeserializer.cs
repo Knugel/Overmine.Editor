@@ -109,10 +109,18 @@ namespace Editor.Serialization
                             !field.FieldType.IsEnum)
                         {
                             var idx = jValue.ToObject<int>();
-                            if (idx >= unityObjects.Count)
-                                value = null;
+                            
+                            if (NodeSerializer.IsTaskReference(field.FieldType))
+                            {
+                                value = view.nodes.ToList().Cast<TaskNode>().FirstOrDefault(x => x.Data.ID == idx)?.Data;
+                            }
                             else
-                                value = unityObjects[idx];
+                            {
+                                if (idx >= unityObjects.Count)
+                                    value = null;
+                                else
+                                    value = unityObjects[idx];
+                            }
                         }
                         else if (jValue.Type == JTokenType.Array
                                  && ((JArray) jValue).Any()

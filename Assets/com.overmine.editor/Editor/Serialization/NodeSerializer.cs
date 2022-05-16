@@ -280,6 +280,8 @@ namespace Editor.Serialization
         
         public static object CreateTypeInstance(Type type)
         {
+            if (type.IsAbstract)
+                return null;
             if (type.IsArray)
                 return Array.CreateInstance(type.GetElementType(), 0);
             return Activator.CreateInstance(type);

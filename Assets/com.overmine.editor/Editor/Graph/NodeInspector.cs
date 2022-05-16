@@ -93,7 +93,7 @@ namespace Overmine.Editor.Graph
                 
                 if (fInfo.FieldType != typeof(SharedVariable))
                 {
-                    if (fInfo.FieldType.IsSerializable && !fInfo.FieldType.IsAbstract && !fInfo.FieldType.Namespace.StartsWith("System"))
+                    if (((!fInfo.FieldType.IsAbstract && fInfo.FieldType.IsSerializable) || NodeSerializer.IsTaskReference(fInfo.FieldType)) && !fInfo.FieldType.Namespace.StartsWith("System"))
                     {
                         var target= fInfo.GetValue(obj) ?? NodeSerializer.CreateTypeInstance(fInfo.FieldType);
                         fInfo.SetValue(obj, target);
@@ -105,7 +105,7 @@ namespace Overmine.Editor.Graph
                         {
                             if(NodeSerializer.IsTaskReference(fInfo.FieldType))
                                 CreateTaskReferenceUI(fInfo.FieldType, fInfo, obj, existing);
-                            else
+                            else if(fInfo.FieldType.IsSerializable)
                                 CreateSharedVariableUI(fInfo.FieldType, target, existing);
                         }
                         else
@@ -117,7 +117,7 @@ namespace Overmine.Editor.Graph
 
                             if(NodeSerializer.IsTaskReference(fInfo.FieldType))
                                 CreateTaskReferenceUI(fInfo.FieldType, fInfo, obj, existing);
-                            else
+                            else if(fInfo.FieldType.IsSerializable)
                                 CreateSharedVariableUI(fInfo.FieldType, target, existing);
                             
                             if (existing.childCount > 0)
@@ -215,12 +215,29 @@ namespace Overmine.Editor.Graph
 
                 container.Add(listView);
             }
+            else
+            {
+                var existing = fInfo.GetValue(obj);
+                tasks.Insert(0, null);
+                string Format(TaskNode node) => node == null ? "None" : $"{node.title} ({node.Data.ID})";
+                var popup = new PopupField<TaskNode>("", tasks, 0, Format, Format);
+                popup.RegisterValueChangedCallback(ev =>
+                {
+                    fInfo.SetValue(obj, ev.newValue?.Data);
+                });
+                
+                var taskNode = tasks.FirstOrDefault(x => x?.Data == existing);
+                popup.SetValueWithoutNotify(taskNode);
+                
+                container.Add(popup);
+            }
         }
 
         private VisualElement CreateTaskListView(List<TaskNode> tasks, Array existing)
         {
             tasks.Insert(0, null);
-            Func<VisualElement> makeItem = () => new PopupField<TaskNode>("", tasks, 0, node => node?.title ?? "None", node => node?.title ?? "None");
+            string Format(TaskNode node) => node == null ? "None" : $"{node.title} ({node.Data.ID})";
+            Func<VisualElement> makeItem = () => new PopupField<TaskNode>("", tasks, 0, Format, Format);
             Action<VisualElement, int> bindItem = (e, i) =>
             {
                 var popup = e as PopupField<TaskNode>;
