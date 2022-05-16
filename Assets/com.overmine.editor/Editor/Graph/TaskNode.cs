@@ -7,6 +7,7 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Action = BehaviorDesigner.Runtime.Tasks.Action;
 
 namespace Overmine.Editor.Graph
 {
@@ -60,6 +61,29 @@ namespace Overmine.Editor.Graph
                 Add(bottomPortContainer);
                 
                 Output = CreatePort(Direction.Output, pTask.MaxChildren() == 1 ? Port.Capacity.Single : Port.Capacity.Multi);
+            }
+
+            var container = this.Q("node-border");
+            container.style.borderLeftWidth = 2;
+            container.style.marginRight = 2;
+            
+            switch (Data)
+            {
+                case EntryTask _:
+                    container.style.borderLeftColor = new Color(0.34f, 0.46f, 0.56f);
+                    break;
+                case Decorator _:
+                    container.style.borderLeftColor = new Color(0.26f, 0.67f, 0.55f);
+                    break;
+                case Conditional _:
+                    container.style.borderLeftColor = new Color(0.98f, 0.78f, 0.31f);
+                    break;
+                case Action _:
+                    container.style.borderLeftColor = new Color(0.98f, 0.25f, 0.27f);
+                    break;
+                case Composite _:
+                    container.style.borderLeftColor = new Color(0.15f, 0.49f, 0.63f);
+                    break;
             }
         }
 

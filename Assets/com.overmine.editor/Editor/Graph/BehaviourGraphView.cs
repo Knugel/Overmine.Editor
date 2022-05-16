@@ -31,7 +31,7 @@ namespace Overmine.Editor.Graph
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
             this.AddManipulator(new FreehandSelector());
-            
+
             graphViewChanged = OnGraphViewChanged;
 
             _graph = graph;
@@ -52,6 +52,8 @@ namespace Overmine.Editor.Graph
             RegisterCallback<MouseDownEvent>(OnMouseDown);
             
             RegisterCallback<KeyDownEvent>(OnKeyDown);
+
+            styleSheets.Add(Resources.Load<StyleSheet>("Styles/GraphView"));
             
             Insert(0, new GridBackground());
         }
