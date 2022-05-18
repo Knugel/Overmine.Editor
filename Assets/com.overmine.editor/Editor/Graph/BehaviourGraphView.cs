@@ -56,6 +56,8 @@ namespace Overmine.Editor.Graph
             styleSheets.Add(Resources.Load<StyleSheet>("Styles/GraphView"));
             
             Insert(0, new GridBackground());
+            
+            Undo.undoRedoPerformed += UpdateInspectorSelection;
         }
 
         private GraphViewChange OnGraphViewChanged(GraphViewChange changes)

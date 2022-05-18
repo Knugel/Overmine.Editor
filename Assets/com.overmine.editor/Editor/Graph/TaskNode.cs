@@ -1,7 +1,6 @@
 using System;
 using System.Reflection;
 using BehaviorDesigner.Runtime.Tasks;
-using Editor.Serialization.Converters;
 using Newtonsoft.Json;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
@@ -64,8 +63,8 @@ namespace Overmine.Editor.Graph
             }
 
             var container = this.Q("node-border");
-            container.style.borderLeftWidth = 2;
-            container.style.marginRight = 2;
+            container.style.borderLeftWidth = 3;
+            container.style.marginRight = 3;
             
             switch (Data)
             {
@@ -105,6 +104,13 @@ namespace Overmine.Editor.Graph
 
             RefreshExpandedState();
             return port;
+        }
+
+        public override void SetPosition(Rect newPos)
+        {
+            newPos.x = Mathf.FloorToInt(newPos.x / 16) * 16;
+            newPos.y = Mathf.FloorToInt(newPos.y / 16) * 16;
+            base.SetPosition(newPos);
         }
     }
 }
