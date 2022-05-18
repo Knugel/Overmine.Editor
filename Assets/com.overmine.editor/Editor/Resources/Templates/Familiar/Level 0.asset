@@ -25,17 +25,17 @@ MonoBehaviour:
         {\r\n      \"Offset\": \"(0,0)\"\r\n    }\r\n  },\r\n  \"RootTask\": {\r\n   
         \"Type\": \"BehaviorDesigner.Runtime.Tasks.Sequence\",\r\n    \"ID\": 1,\r\n   
         \"Name\": \"Sequence\",\r\n    \"Instant\": true,\r\n    \"NodeData\": {\r\n     
-        \"Offset\": \"(-19,61)\"\r\n    },\r\n    \"AbortTypeabortType\": \"None\",\r\n   
+        \"Offset\": \"(0,96)\"\r\n    },\r\n    \"AbortTypeabortType\": \"None\",\r\n   
         \"Children\": [\r\n      {\r\n        \"Type\": \"BehaviorDesigner.Runtime.Tasks.Log\",\r\n       
         \"ID\": 2,\r\n        \"Name\": \"Log\",\r\n        \"Instant\": true,\r\n       
-        \"NodeData\": {\r\n          \"Offset\": \"(-48,165)\"\r\n        },\r\n       
+        \"NodeData\": {\r\n          \"Offset\": \"(-96,224)\"\r\n        },\r\n       
         \"SharedStringtext\": {\r\n          \"Type\": \"BehaviorDesigner.Runtime.SharedString\",\r\n         
         \"Name\": null,\r\n          \"StringmValue\": \"Level 0\"\r\n        },\r\n       
         \"SharedBoollogError\": {\r\n          \"Type\": \"BehaviorDesigner.Runtime.SharedBool\",\r\n         
         \"Name\": null,\r\n          \"BooleanmValue\": false\r\n        }\r\n     
         },\r\n      {\r\n        \"Type\": \"Thor.Idle\",\r\n        \"ID\": 3,\r\n       
         \"Name\": \"Idle\",\r\n        \"Instant\": true,\r\n        \"NodeData\":
-        {\r\n          \"Offset\": \"(78,166)\"\r\n        },\r\n        \"SharedBoolm_hibernate\":
+        {\r\n          \"Offset\": \"(80,224)\"\r\n        },\r\n        \"SharedBoolm_hibernate\":
         {\r\n          \"Type\": \"BehaviorDesigner.Runtime.SharedBool\",\r\n         
         \"Name\": null,\r\n          \"BooleanmValue\": false\r\n        }\r\n     
         }\r\n    ]\r\n  },\r\n  \"Variables\": [\r\n    {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n     

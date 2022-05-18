@@ -22,10 +22,10 @@ MonoBehaviour:
       variableStartIndex: 
       JSONSerialization: "{\r\n  \"EntryTask\": {\r\n    \"Type\": \"BehaviorDesigner.Runtime.Tasks.EntryTask\",\r\n   
         \"ID\": 0,\r\n    \"Name\": \"Entry\",\r\n    \"Instant\": true,\r\n    \"NodeData\":
-        {\r\n      \"Offset\": \"(-12,11)\"\r\n    }\r\n  },\r\n  \"RootTask\": {\r\n   
+        {\r\n      \"Offset\": \"(-16,0)\"\r\n    }\r\n  },\r\n  \"RootTask\": {\r\n   
         \"Type\": \"Thor.WaitForDespawnsEvent\",\r\n    \"ID\": 1,\r\n    \"Name\":
         \"Wait For Despawns Event\",\r\n    \"Instant\": true,\r\n    \"NodeData\":
-        {\r\n      \"Offset\": \"(-103,75)\"\r\n    },\r\n    \"SharedEntitym_target\":
+        {\r\n      \"Offset\": \"(-16,96)\"\r\n    },\r\n    \"SharedEntitym_target\":
         {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": \"Self\",\r\n     
         \"IsShared\": true\r\n    },\r\n    \"SharedBoolm_endOnFailure\": {\r\n     
         \"Type\": \"BehaviorDesigner.Runtime.SharedBool\",\r\n      \"Name\": null,\r\n     
@@ -36,7 +36,7 @@ MonoBehaviour:
         \"BooleanmValue\": false\r\n    },\r\n    \"Children\": [\r\n      {\r\n       
         \"Type\": \"Thor.DoNothing\",\r\n        \"ID\": 2,\r\n        \"Name\":
         \"Do Nothing\",\r\n        \"Instant\": true,\r\n        \"NodeData\": {\r\n         
-        \"Offset\": \"(-38,151)\"\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \"Variables\":
+        \"Offset\": \"(-16,192)\"\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \"Variables\":
         [\r\n    {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": \"Self\",\r\n     
         \"IsShared\": true\r\n    },\r\n    {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n     
         \"Name\": \"Owner\",\r\n      \"IsShared\": true\r\n    },\r\n    {\r\n     

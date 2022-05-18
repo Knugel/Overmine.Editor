@@ -25,7 +25,7 @@ MonoBehaviour:
         {\r\n      \"Offset\": \"(0,0)\"\r\n    }\r\n  },\r\n  \"RootTask\": {\r\n   
         \"Type\": \"Thor.WaitForGainsResourceEvent\",\r\n    \"ID\": 1,\r\n    \"Name\":
         \"Wait For Gains Resource Event\",\r\n    \"Instant\": true,\r\n    \"NodeData\":
-        {\r\n      \"Offset\": \"(-115,70)\"\r\n    },\r\n    \"ResourceDatam_resource\":
+        {\r\n      \"Offset\": \"(0,96)\"\r\n    },\r\n    \"ResourceDatam_resource\":
         0,\r\n    \"SharedIntm_amountOutput\": {\r\n      \"Type\": \"BehaviorDesigner.Runtime.SharedInt\",\r\n     
         \"Name\": \"Amount\",\r\n      \"IsShared\": true\r\n    },\r\n    \"SharedEntitym_sourceOutput\":
         {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": null\r\n   
@@ -39,11 +39,11 @@ MonoBehaviour:
         null,\r\n      \"BooleanmValue\": false\r\n    },\r\n    \"Children\": [\r\n     
         {\r\n        \"Type\": \"BehaviorDesigner.Runtime.Tasks.Sequence\",\r\n       
         \"ID\": 2,\r\n        \"Name\": \"Sequence\",\r\n        \"Instant\": true,\r\n       
-        \"NodeData\": {\r\n          \"Offset\": \"(-20,142)\"\r\n        },\r\n       
+        \"NodeData\": {\r\n          \"Offset\": \"(0,192)\"\r\n        },\r\n       
         \"AbortTypeabortType\": \"None\",\r\n        \"Children\": [\r\n         
         {\r\n            \"Type\": \"Thor.ChangeResource\",\r\n            \"ID\":
         3,\r\n            \"Name\": \"Change Resource\",\r\n            \"Instant\":
-        true,\r\n            \"NodeData\": {\r\n              \"Offset\": \"(-55,222)\"\r\n           
+        true,\r\n            \"NodeData\": {\r\n              \"Offset\": \"(0,288)\"\r\n           
         },\r\n            \"SharedEntitym_target\": {\r\n              \"Type\":
         \"Thor.SharedEntity\",\r\n              \"Name\": \"Self\",\r\n             
         \"IsShared\": true\r\n            },\r\n            \"ResourceDatam_resource\":

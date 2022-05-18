@@ -22,21 +22,21 @@ MonoBehaviour:
       variableStartIndex: 
       JSONSerialization: "{\r\n  \"EntryTask\": {\r\n    \"Type\": \"BehaviorDesigner.Runtime.Tasks.EntryTask\",\r\n   
         \"ID\": 0,\r\n    \"Name\": \"Entry Task\",\r\n    \"Instant\": true,\r\n   
-        \"NodeData\": {\r\n      \"Offset\": \"(553,406)\"\r\n    }\r\n  },\r\n 
+        \"NodeData\": {\r\n      \"Offset\": \"(544,400)\"\r\n    }\r\n  },\r\n 
         \"RootTask\": {\r\n    \"Type\": \"BehaviorDesigner.Runtime.Tasks.Sequence\",\r\n   
         \"ID\": 1,\r\n    \"Name\": \"Sequence\",\r\n    \"Instant\": true,\r\n   
-        \"NodeData\": {\r\n      \"Offset\": \"(557,469)\"\r\n    },\r\n    \"AbortTypeabortType\":
+        \"NodeData\": {\r\n      \"Offset\": \"(544,496)\"\r\n    },\r\n    \"AbortTypeabortType\":
         \"None\",\r\n    \"Children\": [\r\n      {\r\n        \"Type\": \"BehaviorDesigner.Runtime.Tasks.Inverter\",\r\n       
         \"ID\": 2,\r\n        \"Name\": \"Inverter\",\r\n        \"Instant\": true,\r\n       
-        \"NodeData\": {\r\n          \"Offset\": \"(460,573)\"\r\n        },\r\n       
+        \"NodeData\": {\r\n          \"Offset\": \"(432,624)\"\r\n        },\r\n       
         \"Children\": [\r\n          {\r\n            \"Type\": \"BehaviorDesigner.Runtime.Tasks.Sequence\",\r\n           
         \"ID\": 3,\r\n            \"Name\": \"Sequence\",\r\n            \"Instant\":
-        true,\r\n            \"NodeData\": {\r\n              \"Offset\": \"(454,646)\"\r\n           
+        true,\r\n            \"NodeData\": {\r\n              \"Offset\": \"(432,720)\"\r\n           
         },\r\n            \"AbortTypeabortType\": \"LowerPriority\",\r\n           
         \"Children\": [\r\n              {\r\n                \"Type\": \"Thor.PropertyFilter\",\r\n               
         \"ID\": 4,\r\n                \"Name\": \"Property Filter\",\r\n               
         \"Instant\": true,\r\n                \"NodeData\": {\r\n                 
-        \"Offset\": \"(433,724)\"\r\n                },\r\n                \"SharedEntitym_compareWith\":
+        \"Offset\": \"(432,816)\"\r\n                },\r\n                \"SharedEntitym_compareWith\":
         {\r\n                  \"Type\": \"Thor.SharedEntity\",\r\n                 
         \"Name\": null\r\n                },\r\n                \"PropertyComparerm_comparer\":
         {\r\n                  \"BooleanlhsDynamic\": true,\r\n                 
@@ -52,8 +52,15 @@ MonoBehaviour:
         \"Type\": \"Thor.SharedEntityList\",\r\n                  \"Name\": null,\r\n                 
         \"EntityListmValue\": {\r\n                    \"List`1Entities\": [],\r\n                   
         \"Int32Count\": 0\r\n                  }\r\n                }\r\n             
-        }\r\n            ]\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n 
-        \"Variables\": [\r\n    {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n     
+        }\r\n            ]\r\n          }\r\n        ]\r\n      },\r\n      {\r\n       
+        \"Type\": \"BehaviorDesigner.Runtime.Tasks.Log\",\r\n        \"ID\": 5,\r\n       
+        \"Name\": \"Log\",\r\n        \"Instant\": true,\r\n        \"NodeData\":
+        {\r\n          \"Offset\": \"(640,624)\"\r\n        },\r\n        \"SharedStringtext\":
+        {\r\n          \"Type\": \"BehaviorDesigner.Runtime.SharedString\",\r\n         
+        \"Name\": null,\r\n          \"StringmValue\": \"Hello World!\"\r\n       
+        },\r\n        \"SharedBoollogError\": {\r\n          \"Type\": \"BehaviorDesigner.Runtime.SharedBool\",\r\n         
+        \"Name\": null,\r\n          \"BooleanmValue\": false\r\n        }\r\n     
+        }\r\n    ]\r\n  },\r\n  \"Variables\": [\r\n    {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n     
         \"Name\": \"Self\",\r\n      \"IsShared\": true\r\n    },\r\n    {\r\n     
         \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": \"Owner\",\r\n      \"IsShared\":
         true\r\n    },\r\n    {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n     

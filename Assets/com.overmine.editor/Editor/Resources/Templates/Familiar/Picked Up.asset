@@ -25,10 +25,10 @@ MonoBehaviour:
         {\r\n      \"Offset\": \"(0,0)\"\r\n    }\r\n  },\r\n  \"RootTask\": {\r\n   
         \"Type\": \"BehaviorDesigner.Runtime.Tasks.Sequence\",\r\n    \"ID\": 1,\r\n   
         \"Name\": \"Sequence\",\r\n    \"Instant\": true,\r\n    \"NodeData\": {\r\n     
-        \"Offset\": \"(-20,66)\"\r\n    },\r\n    \"AbortTypeabortType\": \"None\",\r\n   
+        \"Offset\": \"(0,96)\"\r\n    },\r\n    \"AbortTypeabortType\": \"None\",\r\n   
         \"Children\": [\r\n      {\r\n        \"Type\": \"Thor.Spawn\",\r\n       
         \"ID\": 2,\r\n        \"Name\": \"Spawn\",\r\n        \"Instant\": true,\r\n       
-        \"NodeData\": {\r\n          \"Offset\": \"(-133,169)\"\r\n        },\r\n       
+        \"NodeData\": {\r\n          \"Offset\": \"(-176,224)\"\r\n        },\r\n       
         \"TargetDatam_targetData\": {\r\n          \"TargetTypetargetType\": \"Entity\",\r\n         
         \"SharedEntitytargetEntity\": {\r\n            \"Type\": \"Thor.SharedEntity\",\r\n           
         \"Name\": \"Target\",\r\n            \"IsShared\": true\r\n          },\r\n         
@@ -66,14 +66,14 @@ MonoBehaviour:
         \"Name\": null,\r\n          \"BooleanmValue\": true\r\n        }\r\n     
         },\r\n      {\r\n        \"Type\": \"Thor.EquipPet\",\r\n        \"ID\":
         3,\r\n        \"Name\": \"Equip Pet\",\r\n        \"Instant\": true,\r\n       
-        \"NodeData\": {\r\n          \"Offset\": \"(-36,170)\"\r\n        },\r\n       
+        \"NodeData\": {\r\n          \"Offset\": \"(0,224)\"\r\n        },\r\n       
         \"SharedEntitym_target\": {\r\n          \"Type\": \"Thor.SharedEntity\",\r\n         
         \"Name\": \"Target\",\r\n          \"IsShared\": true\r\n        },\r\n       
         \"SharedEntitym_pet\": {\r\n          \"Type\": \"Thor.SharedEntity\",\r\n         
         \"Name\": \"Pet\",\r\n          \"IsShared\": true\r\n        },\r\n       
         \"PetSlotTypem_slot\": \"SlotOne\"\r\n      },\r\n      {\r\n        \"Type\":
         \"Thor.PlayAudio\",\r\n        \"ID\": 4,\r\n        \"Name\": \"Play Audio\",\r\n       
-        \"Instant\": true,\r\n        \"NodeData\": {\r\n          \"Offset\": \"(90,169)\"\r\n       
+        \"Instant\": true,\r\n        \"NodeData\": {\r\n          \"Offset\": \"(176,224)\"\r\n       
         },\r\n        \"SharedEntitym_target\": {\r\n          \"Type\": \"Thor.SharedEntity\",\r\n         
         \"IsGlobal\": true,\r\n          \"IsShared\": true,\r\n          \"Name\":
         \"Player\"\r\n        },\r\n        \"Stringm_name\": \"event:/Characters/Familiar_Sylph\",\r\n       

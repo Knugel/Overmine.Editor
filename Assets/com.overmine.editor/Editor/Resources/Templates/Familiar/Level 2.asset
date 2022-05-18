@@ -25,10 +25,10 @@ MonoBehaviour:
         {\r\n      \"Offset\": \"(0,0)\"\r\n    }\r\n  },\r\n  \"RootTask\": {\r\n   
         \"Type\": \"BehaviorDesigner.Runtime.Tasks.Sequence\",\r\n    \"ID\": 1,\r\n   
         \"Name\": \"Sequence\",\r\n    \"Instant\": true,\r\n    \"NodeData\": {\r\n     
-        \"Offset\": \"(-19,65)\"\r\n    },\r\n    \"AbortTypeabortType\": \"None\",\r\n   
+        \"Offset\": \"(0,96)\"\r\n    },\r\n    \"AbortTypeabortType\": \"None\",\r\n   
         \"Children\": [\r\n      {\r\n        \"Type\": \"Thor.PropertyFilter\",\r\n       
         \"ID\": 2,\r\n        \"Name\": \"Property Filter\",\r\n        \"Instant\":
-        true,\r\n        \"NodeData\": {\r\n          \"Offset\": \"(-145,169)\"\r\n       
+        true,\r\n        \"NodeData\": {\r\n          \"Offset\": \"(-96,224)\"\r\n       
         },\r\n        \"SharedEntitym_compareWith\": {\r\n          \"Type\": \"Thor.SharedEntity\",\r\n         
         \"Name\": null\r\n        },\r\n        \"PropertyComparerm_comparer\": {\r\n         
         \"BooleanlhsDynamic\": true,\r\n          \"BooleanrhsDynamic\": false,\r\n         
@@ -43,18 +43,18 @@ MonoBehaviour:
         [],\r\n            \"Int32Count\": 0\r\n          }\r\n        }\r\n     
         },\r\n      {\r\n        \"Type\": \"BehaviorDesigner.Runtime.Tasks.Sequence\",\r\n       
         \"ID\": 3,\r\n        \"Name\": \"Sequence\",\r\n        \"Instant\": true,\r\n       
-        \"NodeData\": {\r\n          \"Offset\": \"(53,169)\"\r\n        },\r\n       
+        \"NodeData\": {\r\n          \"Offset\": \"(80,224)\"\r\n        },\r\n       
         \"AbortTypeabortType\": \"None\",\r\n        \"Children\": [\r\n         
         {\r\n            \"Type\": \"BehaviorDesigner.Runtime.Tasks.Log\",\r\n           
         \"ID\": 4,\r\n            \"Name\": \"Log\",\r\n            \"Instant\":
-        true,\r\n            \"NodeData\": {\r\n              \"Offset\": \"(26,273)\"\r\n           
+        true,\r\n            \"NodeData\": {\r\n              \"Offset\": \"(-16,352)\"\r\n           
         },\r\n            \"SharedStringtext\": {\r\n              \"Type\": \"BehaviorDesigner.Runtime.SharedString\",\r\n             
         \"Name\": null,\r\n              \"StringmValue\": \"Level 2\"\r\n           
         },\r\n            \"SharedBoollogError\": {\r\n              \"Type\": \"BehaviorDesigner.Runtime.SharedBool\",\r\n             
         \"Name\": null,\r\n              \"BooleanmValue\": false\r\n           
         }\r\n          },\r\n          {\r\n            \"Type\": \"Thor.Idle\",\r\n           
         \"ID\": 5,\r\n            \"Name\": \"Idle\",\r\n            \"Instant\":
-        true,\r\n            \"NodeData\": {\r\n              \"Offset\": \"(143,273)\"\r\n           
+        true,\r\n            \"NodeData\": {\r\n              \"Offset\": \"(160,352)\"\r\n           
         },\r\n            \"SharedBoolm_hibernate\": {\r\n              \"Type\":
         \"BehaviorDesigner.Runtime.SharedBool\",\r\n              \"Name\": null,\r\n             
         \"BooleanmValue\": false\r\n            }\r\n          }\r\n        ]\r\n     

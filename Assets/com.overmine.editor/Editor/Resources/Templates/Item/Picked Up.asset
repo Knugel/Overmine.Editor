@@ -22,10 +22,10 @@ MonoBehaviour:
       variableStartIndex: 
       JSONSerialization: "{\r\n  \"EntryTask\": {\r\n    \"Type\": \"BehaviorDesigner.Runtime.Tasks.EntryTask\",\r\n   
         \"ID\": 0,\r\n    \"Name\": \"Entry Task\",\r\n    \"Instant\": true,\r\n   
-        \"NodeData\": {\r\n      \"Offset\": \"(546,392)\"\r\n    }\r\n  },\r\n 
+        \"NodeData\": {\r\n      \"Offset\": \"(544,384)\"\r\n    }\r\n  },\r\n 
         \"RootTask\": {\r\n    \"Type\": \"Thor.AddStatusEffect\",\r\n    \"ID\":
         1,\r\n    \"Name\": \"Add Status Effect\",\r\n    \"Instant\": true,\r\n   
-        \"NodeData\": {\r\n      \"Offset\": \"(517,458)\"\r\n    },\r\n    \"SharedEntitym_target\":
+        \"NodeData\": {\r\n      \"Offset\": \"(544,480)\"\r\n    },\r\n    \"SharedEntitym_target\":
         {\r\n      \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": \"Target\",\r\n     
         \"IsShared\": true\r\n    },\r\n    \"SharedEntitym_statusEffect\": {\r\n     
         \"Type\": \"Thor.SharedEntity\",\r\n      \"Name\": null,\r\n      \"EntitymValue\":
