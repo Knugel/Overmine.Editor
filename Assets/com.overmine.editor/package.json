@@ -1,5 +1,11 @@
 {
 	"name": "com.overmine.editor",
+	"author": {
+		"name": "Knugel"
+	},
+	"displayName": "Overmine Editor",
+	"documentationUrl": "https://knugel.github.io/Overmine/",
+	"hideInEditor": false,
 	"version": "0.1.4",
 	"unity": "2019.4"
 }

@@ -65,7 +65,12 @@ namespace Overmine.Editor.Graph
             var container = this.Q("node-border");
             container.style.borderLeftWidth = 3;
             container.style.marginRight = 3;
-            
+            if (Input != null && Output != null)
+            {
+                style.height = 90;
+                style.maxHeight = 90;
+            }
+
             switch (Data)
             {
                 case EntryTask _:
