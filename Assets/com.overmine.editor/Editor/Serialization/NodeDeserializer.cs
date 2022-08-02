@@ -18,9 +18,18 @@ namespace Editor.Serialization
                 return;
             
             var obj = JObject.Parse(data.JSONSerialization);
-            
-            var entry = DeserializeNode(obj.GetValue("EntryTask"), data, view);
-            var root = DeserializeNode(obj.GetValue("RootTask"), data, view);
+
+            var entryTask = obj.GetValue("EntryTask");
+            var rootTask = obj.GetValue("RootTask");
+
+            if (entryTask == null || rootTask == null || !entryTask.HasValues || !rootTask.HasValues)
+            {
+                Debug.LogWarning("Couldn't deserialize behavior tree because either the entry or root task was empty!");
+                return;
+            }
+
+            var entry = DeserializeNode(entryTask, data, view);
+            var root = DeserializeNode(rootTask, data, view);
             DeserializeVariables(obj.GetValue("Variables"), view);
             
             view.Connect(root, entry);
@@ -47,7 +56,7 @@ namespace Editor.Serialization
         private static TaskNode DeserializeNode(JToken token, TaskSerializationData data, BehaviourGraphView view)
         {
             var obj = token as JObject;
-            
+
             var type = TaskUtility.GetTypeWithinAssembly(obj.Value<string>("Type"));
             var nData = obj.Value<JObject>("NodeData");
             var position = nData.GetValue("Offset").ToObject<Vector2>(NodeSerializer.Serializer);
@@ -133,8 +142,16 @@ namespace Editor.Serialization
                             for (var i = 0; i < jArray.Count; i++)
                             {
                                 var idx = jArray[i].ToObject<int>();
-                                var reference = view.nodes.ToList().Cast<TaskNode>().FirstOrDefault(x => x.Data.ID == idx);
-                                array.SetValue(reference.Data, i);
+                                if (NodeSerializer.IsTaskReference(field.FieldType))
+                                {
+                                    var reference = view.nodes.ToList().Cast<TaskNode>().FirstOrDefault(x => x.Data.ID == idx);
+                                    array.SetValue(reference.Data, i);
+                                }
+                                else
+                                {
+                                    var entry = idx >= unityObjects.Count ? null : unityObjects[idx];
+                                    array.SetValue(entry, i);
+                                }
                             }
 
                             value = array;
@@ -144,6 +161,12 @@ namespace Editor.Serialization
                             value = jValue.ToObject(field.FieldType, NodeSerializer.Serializer);
                         }
 
+                        if (value != null && !field.FieldType.IsInstanceOfType(value))
+                        {
+                            var fallback = field.FieldType.IsValueType ? Activator.CreateInstance(field.FieldType) : null;
+                            Debug.LogError($"Can't assign value {value} to field {field.Name} of type {field.FieldType.FullName}. Will be substituted with a default of {fallback ?? "null"}");
+                            value = fallback;
+                        }
                         field.SetValue(instance, value);
                     }
                 }

@@ -29,14 +29,14 @@ namespace Editor.Serialization
             typeof(SharedVariable),
             typeof(IList)
         };
-        
+
         static NodeSerializer()
         {
             Serializer = JsonSerializer.CreateDefault();
             Serializer.Formatting = Formatting.Indented;
             Serializer.NullValueHandling = NullValueHandling.Ignore;
             Serializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            
+
             Serializer.Converters.Add(new Vector2Converter());
             Serializer.Converters.Add(new Vector3Converter());
             Serializer.Converters.Add(new ColorConverter());
@@ -49,7 +49,7 @@ namespace Editor.Serialization
         public static TaskSerializationData Serialize(BehaviourGraph graph)
         {
             var data = new TaskSerializationData();
-            
+
             var entry = graph.NodesData.FirstOrDefault(x => x.Type == typeof(EntryTask));
             if (entry == null)
             {
@@ -59,9 +59,9 @@ namespace Editor.Serialization
 
             var nodes = graph.GetLinked(entry);
             var root = nodes.FirstOrDefault();
-            
+
             var objects = new List<UnityEngine.Object>();
-            
+
             var node = new JObject
             {
                 { "EntryTask", SerializeNode(graph, entry, objects, false) },
@@ -79,11 +79,12 @@ namespace Editor.Serialization
             return data;
         }
 
-        private static JToken SerializeNode(BehaviourGraph graph, NodeData node, List<UnityEngine.Object> objects, bool withChildren = true)
+        private static JToken SerializeNode(BehaviourGraph graph, NodeData node, List<UnityEngine.Object> objects,
+            bool withChildren = true)
         {
             if (node == null)
                 return null;
-            
+
             var obj = new JObject();
             obj.Add("Type", JToken.FromObject(EvaluateType(node.Type), Serializer));
             obj.Add("ID", JToken.FromObject(node.Data.ID, Serializer));
@@ -95,10 +96,10 @@ namespace Editor.Serialization
             });
 
             WriteFields(node.Type, node.Data, obj, graph, objects);
-            
+
             if (!withChildren)
                 return obj;
-            
+
             var children = graph.GetLinked(node).ToList();
             if (children.Count > 0)
             {
@@ -107,90 +108,36 @@ namespace Editor.Serialization
                 {
                     array.Add(SerializeNode(graph, child, objects));
                 }
+
                 obj.Add("Children", array);
             }
-            
+
             return obj;
         }
 
-        private static void WriteFields(Type type, object target, JObject obj, BehaviourGraph graph, List<UnityEngine.Object> objects)
+        private static void WriteFields(Type type, object target, JObject obj, BehaviourGraph graph,
+            List<UnityEngine.Object> objects)
         {
             foreach (var field in GetSerializedFields(type))
             {
                 try
                 {
                     var value = field.GetValue(target);
-                    if (value is SharedVariable shared)
+                    if (value is Array values)
                     {
-                        var variable = graph.Variables.FirstOrDefault(x => x.Name == shared.Name);
-                        if (variable != null)
-                            shared.IsGlobal = variable.IsGlobal;
-                        
-                        var sValue = shared.GetValue();
-                        if (sValue is UnityEngine.Object sObject)
+                        var jArray = new JArray();
+                        for (var i = 0; i < values.Length; i++)
                         {
-                            var idx = objects.FindIndex(x => ReferenceEquals(x, sObject));
-                            if (idx == -1)
-                            {
-                                objects.Add(sObject);
-                                idx = objects.FindIndex(x => ReferenceEquals(x, sObject));
-                            }
-                            shared.PropertyMapping = idx.ToString();
+                            value = values.GetValue(i);
+                            var serialized = SerializeValue(value, field, graph, objects);
+                            jArray.Add(serialized);
                         }
-                    } 
-                    else if (value is UnityEngine.Object sObject)
-                    {
-                        var idx = objects.FindIndex(x => ReferenceEquals(x, sObject));
-                        if (idx == -1)
-                        {
-                            objects.Add(sObject);
-                            idx = objects.FindIndex(x => ReferenceEquals(x, sObject));
-                        }
-                        obj.Add(field.FieldType.Name + field.Name, JToken.FromObject(idx, Serializer));
-                        continue;
-                    } 
-                    else if (IsTaskReference(field.FieldType))
-                    {
-                        if (field.FieldType.IsArray)
-                        {
-                            var array = value as Array;
-                            var idx = new List<int>();
-                            for (var i = 0; i < array.Length; i++)
-                            {
-                                value = array.GetValue(i);
-                                var task = graph.NodesData.FirstOrDefault(x => x.Data == value);
-                                if(task != null)
-                                    idx.Add(task.Data.ID);
-                            }
-                            obj.Add(field.FieldType.Name + field.Name, JToken.FromObject(idx, Serializer));
-                        }
-                        else
-                        {
-                            var task = graph.NodesData.FirstOrDefault(x => x.Data == value);
-                            if(task != null)
-                                obj.Add(field.FieldType.Name + field.Name, JToken.FromObject(task.Data.ID, Serializer));
-                        }
-                        continue;
+                        obj.Add(field.FieldType.Name + field.Name, jArray);
                     }
-
-                    var name = field.FieldType.Name + field.Name;
-                    if (HasConverter.Any(x => x.IsAssignableFrom(field.FieldType)))
+                    else
                     {
-                        if (value != null && !obj.ContainsKey(name))
-                            obj.Add(name, JToken.FromObject(value, Serializer));
-                    }
-                    else if(value != null)
-                    {
-                        if (field.FieldType.IsPrimitive || field.FieldType == typeof(string) || field.FieldType.IsEnum)
-                        {
-                            obj.Add(name, JToken.FromObject(value, Serializer));
-                        }
-                        else
-                        {
-                            var container = new JObject();
-                            WriteFields(field.FieldType, value, container, graph, objects);
-                            obj.Add(name, container);
-                        }
+                        var serialized = SerializeValue(value, field, graph, objects);
+                        obj.Add(field.FieldType.Name + field.Name, serialized);
                     }
                 }
                 catch (Exception e)
@@ -199,7 +146,75 @@ namespace Editor.Serialization
                 }
             }
         }
-        
+
+        private static JToken SerializeValue(object value, FieldInfo field, BehaviourGraph graph,
+            List<UnityEngine.Object> objects)
+        {
+            switch (value)
+            {
+                case SharedVariable shared:
+                {
+                    var variable = graph.Variables.FirstOrDefault(x => x.Name == shared.Name);
+                    if (variable != null)
+                        shared.IsGlobal = variable.IsGlobal;
+
+                    var sValue = shared.GetValue();
+                    if (sValue is UnityEngine.Object sObject)
+                    {
+                        var idx = objects.FindIndex(x => ReferenceEquals(x, sObject));
+                        if (idx == -1)
+                        {
+                            objects.Add(sObject);
+                            idx = objects.FindIndex(x => ReferenceEquals(x, sObject));
+                        }
+
+                        shared.PropertyMapping = idx.ToString();
+                    }
+
+                    break;
+                }
+                case UnityEngine.Object sObject:
+                {
+                    var idx = objects.FindIndex(x => ReferenceEquals(x, sObject));
+                    if (idx == -1)
+                    {
+                        objects.Add(sObject);
+                        idx = objects.FindIndex(x => ReferenceEquals(x, sObject));
+                    }
+                
+                    return JToken.FromObject(idx, Serializer);
+                }
+                default:
+                {
+                    if (IsTaskReference(field.FieldType))
+                    {
+                        var task = graph.NodesData.FirstOrDefault(x => x.Data == value);
+                        if (task != null)
+                            return JToken.FromObject(task.Data.ID, Serializer);
+                    }
+                    break;
+                }
+            }
+            
+            if (HasConverter.Any(x => x.IsAssignableFrom(field.FieldType)))
+            {
+                if (value != null) 
+                    return JToken.FromObject(value, Serializer);
+            }
+            else if (value != null)
+            {
+                if (field.FieldType.IsPrimitive || field.FieldType == typeof(string) || field.FieldType.IsEnum)
+                {
+                    return JToken.FromObject(value, Serializer);
+                }
+
+                var container = new JObject();
+                WriteFields(field.FieldType, value, container, graph, objects);
+                return container;
+            }
+            return null;
+        }
+
         private static JToken SerializeVariables(BehaviourGraph graph)
         {
             var ret = new JArray();
@@ -277,7 +292,7 @@ namespace Editor.Serialization
                 type = type.GetElementType();
             return typeof(Task).IsAssignableFrom(type);
         }
-        
+
         public static object CreateTypeInstance(Type type)
         {
             if (type.IsAbstract)
